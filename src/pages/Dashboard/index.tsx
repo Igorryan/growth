@@ -1,10 +1,10 @@
 import React from 'react';
 
-import BackgroundSVG from '../../components/BackgroundSVG'
+import Background from '../../components/Background'
 
 const Dashboard: React.FC = () => {
   return (
-    <BackgroundSVG />
+    <Background />
   )
 }
 
