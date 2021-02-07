@@ -7,6 +7,11 @@ export default createGlobalStyle`
     box-sizing: border-box;
     outline: 0;
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  main, aside {
+    z-index: 1;
   }
 
   body {
@@ -16,7 +21,6 @@ export default createGlobalStyle`
   }
 
   body, input, button {
-    font-family: 'Roboto Slab', serif;
     font-size: 16px;
   }
 

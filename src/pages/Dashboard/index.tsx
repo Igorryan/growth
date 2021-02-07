@@ -1,10 +1,13 @@
 import React from 'react';
+import * as S from './styles';
 
-import Background from '../../components/Background'
+import NavigationMenu from '../../components/NavigationMenu';
 
 const Dashboard: React.FC = () => {
   return (
-    <Background />
+    <S.Wrapper>
+      <NavigationMenu />
+    </S.Wrapper>
   )
 }
 
