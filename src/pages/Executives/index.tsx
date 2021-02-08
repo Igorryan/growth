@@ -15,25 +15,25 @@ const data = [
     image: SergioProfile,
     name: 'Sérgio Estevam',
     occupation: 'Founder & CEO',
-    linkedin: 'sergio'
+    linkedin: 's%C3%A9rgio-estevam-jr-61322187'
   },
   {
     image: WellaineProfile,
     name: 'Wesllaine Castro',
     occupation: 'Co - Founder & CKO',
-    linkedin: ''
+    linkedin: 'wesllaine-castro-060a98205'
   },
   {
     image: LuizProfile,
     name: 'Luiz M. Couto',
     occupation: 'CTO',
-    linkedin: ''
+    linkedin: 'luizmcouto'
   },
   {
     image: MuriloProfile,
     name: 'Murilo Ravani',
     occupation: 'CPO',
-    linkedin: ''
+    linkedin: 'muriloravani'
   },
   {
     image: MatheusProfile,
@@ -45,7 +45,7 @@ const data = [
     image: LeandroProfile,
     name: 'Leandro Almeida',
     occupation: 'COO',
-    linkedin: ''
+    linkedin: 'leandro-almeida-de-matos-758981169'
   }
 ]
 
