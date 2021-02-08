@@ -44,7 +44,6 @@ export const Header = styled.header`
 `
 
 export const Title = styled.h1`
-  font-family: 'Saira Semi Condensed', sans-serif;
   text-transform: uppercase;
   font-size: 43px;
 

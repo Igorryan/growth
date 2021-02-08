@@ -5,6 +5,7 @@ export const BackgroundSVG = styled.svg`
   height: 100vh;
 
   position: fixed;
+  top: 0;
   margin-left: -30px;
 `
 
