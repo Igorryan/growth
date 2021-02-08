@@ -24,9 +24,10 @@ const NavigationMenu: React.FC = () => {
         <S.OptionsList>
           <S.Link active={linkSelected === 1} onClick={() => setLinkSelected(1)} to="/">O que a Growth faz?</S.Link>
           <S.Link active={linkSelected === 2} onClick={() => setLinkSelected(2)} to="/journey">Nossa Jornada</S.Link>
-          <S.Link active={linkSelected === 3} onClick={() => setLinkSelected(3)} to="/executives">Executivos</S.Link>
-          <S.Link active={linkSelected === 4} onClick={() => setLinkSelected(4)} to="/portfolio">Portfólio</S.Link>
-          <S.Link active={linkSelected === 5} onClick={() => setLinkSelected(5)} to="/contact">Contato</S.Link>
+          <S.Link active={linkSelected === 3} onClick={() => setLinkSelected(3)} to="/how-we-do">Como fazemos?</S.Link>
+          <S.Link active={linkSelected === 4} onClick={() => setLinkSelected(4)} to="/executives">Executivos</S.Link>
+          <S.Link active={linkSelected === 5} onClick={() => setLinkSelected(5)} to="/portfolio">Portfólio</S.Link>
+          <S.Link active={linkSelected === 6} onClick={() => setLinkSelected(6)} to="/contact">Contato</S.Link>
         </S.OptionsList>
       </S.OptionsListWrapper>
   
