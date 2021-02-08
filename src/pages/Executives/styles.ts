@@ -40,6 +40,8 @@ export const ExecutivesWrapper = styled.div`
   `
 
 export const Executive = styled.div`
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,6 +60,12 @@ export const ProfileImage = styled.img`
   margin-bottom: 30px;
   border: 1px solid #70EAA6;
   border-radius: 50%;
+`
+
+export const ArrowIcon = styled.img`
+  position: absolute;
+  top: 180px;
+  right: 66px;
 `
 
 export const Name = styled.strong`

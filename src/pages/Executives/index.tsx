@@ -1,6 +1,8 @@
 import React from 'react';
 import * as S from './styles';
 
+import ArrowMinIcon from '../../assets/icons/arrow-min.svg'
+
 import SergioProfile from '../../assets/img/executives/sergio.png'
 import WellaineProfile from '../../assets/img/executives/wesllaine.png'
 import LuizProfile from '../../assets/img/executives/luiz.png'
@@ -55,6 +57,7 @@ const Executives: React.FC = () => (
         {data.map(({ image, name, occupation, linkedin }) => (
           <S.Executive key={name}>
             <S.ProfileImage src={image} alt={name} />
+            <S.ArrowIcon src={ArrowMinIcon}/>
             <S.Name>{name}</S.Name>
             <S.Ocuppation>{occupation}</S.Ocuppation>
             <S.LinkWrapper>
