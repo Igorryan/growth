@@ -11,6 +11,7 @@ import LinkedinIcon from '../../assets/icons/linkedin.svg'
 
 const NavigationMenu: React.FC = () => {
   const [menuVisible, setMenuVisible] = useState(true)
+  const [linkSelected, setLinkSelected] = useState(1)
 
   return (
     <S.Wrapper visible={menuVisible}>
@@ -20,11 +21,11 @@ const NavigationMenu: React.FC = () => {
         <S.LogoSVG src={Icon} />
         <S.TitleSVG src={Logo} />
   
-        <S.OptionsList loading={14}>
-          <li className="active">O que a Growth faz?</li>
-          <li>Nossa Jornada</li>
-          <li>Executivos</li>
-          <li>Portfólio</li>
+        <S.OptionsList>
+          <S.Link active={linkSelected === 1} onClick={() => setLinkSelected(1)} to="/">O que a Growth faz?</S.Link>
+          <S.Link active={linkSelected === 2} onClick={() => setLinkSelected(2)} to="/">Nossa Jornada</S.Link>
+          <S.Link active={linkSelected === 3} onClick={() => setLinkSelected(3)} to="/Executives">Executivos</S.Link>
+          <S.Link active={linkSelected === 4} onClick={() => setLinkSelected(4)} to="/">Portfólio</S.Link>
         </S.OptionsList>
       </S.OptionsListWrapper>
   

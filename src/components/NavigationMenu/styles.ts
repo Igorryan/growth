@@ -1,4 +1,5 @@
-import styled, {css} from 'styled-components'
+import styled, {css, keyframes} from 'styled-components'
+import {NavLink} from 'react-router-dom'
 
 import ArrowIllustration from '../../assets/illustrations/arrow.svg'
 
@@ -6,9 +7,19 @@ interface MenuProps {
   visible: boolean;
 }
 
-interface ListProps {
-  loading: number
+interface LinkProps {
+  active?: boolean
 }
+
+const loadingAnimation = keyframes`
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 24px;
+  }
+`
 
 export const Wrapper = styled.aside<MenuProps>`
   position: fixed;
@@ -40,6 +51,7 @@ export const Wrapper = styled.aside<MenuProps>`
 `
 
 export const ButtonBack = styled.img`
+  display: none;
   position: absolute;
 
   top: 20px;
@@ -67,45 +79,42 @@ export const TitleSVG = styled.img`
   margin-bottom: 57px;
 `;
 
-export const OptionsList = styled.ul<ListProps>`
+export const OptionsList = styled.ul`
+  display: flex;
+  flex-direction: column;
   font-size: 14px;
+`
 
-  li {
-    margin-bottom: 20px;
-    overflow: visible;
-    cursor: pointer;
+export const Link = styled(NavLink)<LinkProps>`
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 20px;
+  overflow: visible;
 
-    &.active {
-      position: relative;
+  &::after {
+    content: '';
+    
+    position: absolute;
+    left: 0;
+    bottom: -6px;
 
-      color: #70EAA6;
-      font-weight: 700;
+    background: #70EAA6;
 
-      &::after {
-        content: '';
-        
-        position: absolute;
-        left: 0;
-        bottom: -6px;
+    height: 2px;
 
-        background: #70EAA6;
-
-        height: 2px;
-
-        transition: width 0.4s ease-in-out;
-      }
-    }
-
-    ${props => props.loading && css`
-    &.active {
-      &::after {
-        width: ${props.loading}px;
-      }
-    }
-    `}
-
-
+    transition: width 0.5s ease-in-out;
   }
+
+  ${props => props.active && css`
+    position: relative;
+    color: #70EAA6;
+    font-weight: 700;
+
+    &::after {
+      animation: ${loadingAnimation} 0.4s forwards ease-in;
+    }
+  }
+  `}
 `
 
 export const Footer = styled.footer`

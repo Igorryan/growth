@@ -1,23 +1,13 @@
 import styled from 'styled-components'
 
 import BackgroundImage from '../../assets/img/background-1.png';
+import LayoutBase from '../../components/LayoutBase';
 
-
-export const Wrapper = styled.main`
+export const Wrapper = styled(LayoutBase)`
   background-image: url(${BackgroundImage});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   background-position-y: -500px;
   background-position-x: -720px;
-
-  position: fixed;
-
-  width: 100vw;
-  height: 200vh;
 `
-
-
 
 export const ContentWrapper = styled.div`
   display: flex;
