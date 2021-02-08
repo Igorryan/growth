@@ -1,14 +1,25 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
 import ArrowIllustration from '../../assets/illustrations/arrow.svg'
 
-export const Wrapper = styled.aside`
-  position: relative;
+interface MenuProps {
+  visible: boolean;
+}
+
+interface ListProps {
+  loading: number
+}
+
+export const Wrapper = styled.aside<MenuProps>`
+  position: fixed;
+  top: 0;
 
   background: #242424;
 
   width: 264px;
   height: 100vh;
+
+  transition: all 0.3s ease-in-out;
 
   &::before {
     content: '';
@@ -22,6 +33,10 @@ export const Wrapper = styled.aside`
 
     z-index: 0;
   }
+
+  ${props => !props.visible && css`
+    transform: translateX(-264px);
+  `}
 `
 
 export const ButtonBack = styled.img`
@@ -52,7 +67,7 @@ export const TitleSVG = styled.img`
   margin-bottom: 57px;
 `;
 
-export const OptionsList = styled.ul`
+export const OptionsList = styled.ul<ListProps>`
   font-size: 14px;
 
   li {
@@ -71,23 +86,25 @@ export const OptionsList = styled.ul`
         
         position: absolute;
         left: 0;
-        bottom: -5px;
+        bottom: -6px;
 
         background: #70EAA6;
 
         height: 2px;
-        width: 14px;
 
         transition: width 0.4s ease-in-out;
       }
     }
 
-    &.active:hover {
-
+    ${props => props.loading && css`
+    &.active {
       &::after {
-        width: 50%;
+        width: ${props.loading}px;
       }
     }
+    `}
+
+
   }
 `
 

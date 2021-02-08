@@ -26,6 +26,9 @@ export default createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6, strong {
     font-weight: 500;
+    line-height: 105.4%;
+    overflow-y: hidden;
+    margin: 0;
   }
 
   button {
