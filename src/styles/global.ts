@@ -10,7 +10,7 @@ export default createGlobalStyle`
     font-family: 'Roboto', sans-serif;
   }
 
-  main, aside {
+  * {
     z-index: 1;
   }
 

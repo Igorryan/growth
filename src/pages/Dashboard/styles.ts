@@ -4,8 +4,6 @@ import BackgroundImage from '../../assets/img/background-1.png';
 
 
 export const Wrapper = styled.main`
-  z-index: 0;
-
   background-image: url(${BackgroundImage});
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,21 +15,16 @@ export const Wrapper = styled.main`
 
   width: 100vw;
   height: 200vh;
-
-  > svg {
-    z-index: 0;
-  }
 `
 
-export const Section = styled.section`
+
+
+export const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
 
-  width: 868px;
   height: 100vh;
-
-  margin-left: 384px;
+  margin-left: 125px;
 
   > img {
     margin-right: 47px;

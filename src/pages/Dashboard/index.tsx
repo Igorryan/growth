@@ -1,20 +1,20 @@
 import React from 'react';
 import * as S from './styles';
 
-import NavigationMenu from '../../components/NavigationMenu';
 import Slider from '../../components/Slider';
 
 import Sculpture from '../../assets/img/sculpture.png';
+import LayoutBase from '../../components/LayoutBase';
 
 const Dashboard: React.FC = () => {
   return (
     <S.Wrapper>
-      <NavigationMenu />
-
-      <S.Section>
-        <img src={Sculpture} alt=""/>
-        <Slider />
-      </S.Section>
+      <LayoutBase>
+        <S.ContentWrapper>
+          <img src={Sculpture} alt=""/>
+          <Slider />
+        </S.ContentWrapper>
+      </LayoutBase>
     </S.Wrapper>
   )
 }

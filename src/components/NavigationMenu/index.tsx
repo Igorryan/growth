@@ -3,7 +3,7 @@ import * as S from './styles';
 
 import ButtonBack from '../../assets/icons/arrow-back-in-container.svg';
 import Icon from '../../assets/icons/icon.svg';
-import Logo from '../../assets/svgs/logo.svg';
+import Logo from '../../assets/icons/logo.svg';
 import LogoBlack from '../../assets/img/logo-black.png'
 import AmazonLogo from '../../assets/icons/amazonwebservices.svg';
 import BMALogo from '../../assets/img/bma-advogados-logo.png'
