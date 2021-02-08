@@ -20,16 +20,13 @@ export const ContentWrapper = styled.section`
   padding-top: 60px;
   padding-bottom: 60px;
   padding-left: 115px;
-
-  > img {
-    margin-right: 47px;
-  }
 `
 
 export const Title = styled.h1`
   font-size: 43px;
   text-transform: uppercase;
 
+  color:#70EAA6;
   margin-bottom: 45px;
 `
 

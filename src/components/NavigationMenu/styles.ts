@@ -35,7 +35,7 @@ export const Wrapper = styled.aside<MenuProps>`
   &::before {
     content: '';
     position: absolute;
-    top: 372px;
+    top: 402px;
 
     width: 443px;
     height: 426px;

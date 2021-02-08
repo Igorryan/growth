@@ -32,6 +32,12 @@ const data = [
     title: 'Adequação técnica para LGPD',
     description: 'Padronização, segurança e confiança nos dados coletados do seu cliente. Advogados especializados na área de tecnologia e segurança da informação.',
   },
+  {
+    id: 7,
+    title: 'Serviços Financeiros',
+    description: 'Implementação de serviços financeiros para escalar seu negócio. Transformamos você e todo seu ecossistema em um banco digital.',
+  },
+  
 ]
 
 const Slider: React.FC = () => {
