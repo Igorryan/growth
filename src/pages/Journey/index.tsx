@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './styles';
 
-import Slider from '../../components/Slider';
+import SliderJourney from '../../components/SliderJourney';
 
 import Sculpture from '../../assets/img/sculpture.png';
 
@@ -10,7 +10,7 @@ const Journey: React.FC = () => {
     <S.Wrapper>
       <S.ContentWrapper>
         <img src={Sculpture} alt=""/>
-        <Slider />
+        <SliderJourney />
       </S.ContentWrapper>
     </S.Wrapper>
   )

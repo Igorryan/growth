@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import BackgroundImage from '../../assets/img/background-1.png';
+import BackgroundImage from '../../assets/img/background-journey.png';
 import LayoutBase from '../../components/LayoutBase';
 
 export const Wrapper = styled(LayoutBase)`
@@ -22,6 +22,6 @@ export const ContentWrapper = styled.div`
   margin-left: 90px;
 
   > img {
-    margin-right: 47px;
+    margin-right: 67px;
   }
 `

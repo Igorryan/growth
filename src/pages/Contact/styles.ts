@@ -4,6 +4,7 @@ import LayoutBase from '../../components/LayoutBase';
 
 export const Wrapper = styled(LayoutBase)`
   background-color: #000;
+
 `
 
 export const ContentWrapper = styled.section`

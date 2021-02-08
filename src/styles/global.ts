@@ -6,12 +6,9 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     outline: 0;
-    overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
-  }
-
-  * {
     z-index: 1;
+    overflow-x: hidden;
   }
 
   body {

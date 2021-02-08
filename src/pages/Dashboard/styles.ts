@@ -22,6 +22,6 @@ export const ContentWrapper = styled.div`
   margin-left: 90px;
 
   > img {
-    margin-right: 47px;
+    margin-right: 67px;
   }
 `
