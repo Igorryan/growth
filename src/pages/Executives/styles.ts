@@ -19,7 +19,7 @@ export const ContentWrapper = styled.section`
 
   padding-top: 60px;
   padding-bottom: 60px;
-  padding-left: 145px;
+  padding-left: 115px;
 
   > img {
     margin-right: 47px;

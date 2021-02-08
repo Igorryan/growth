@@ -19,7 +19,7 @@ export const ContentWrapper = styled.div`
   align-items: center;
 
   height: 100vh;
-  margin-left: 125px;
+  margin-left: 90px;
 
   > img {
     margin-right: 47px;
