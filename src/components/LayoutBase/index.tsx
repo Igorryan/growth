@@ -3,8 +3,8 @@ import * as S from './styles';
 
 import BackgroundSvg from '../BackgroundSvg';
 
-const LayoutBase: React.FC = ({ children }) => (
-  <S.Wrapper>
+const LayoutBase: React.FC = ({ children, ...props}) => (
+  <S.Wrapper {...props}>
       <BackgroundSvg />
       {children}
   </S.Wrapper>

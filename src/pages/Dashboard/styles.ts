@@ -7,6 +7,11 @@ export const Wrapper = styled(LayoutBase)`
   background-image: url(${BackgroundImage});
   background-position-y: -500px;
   background-position-x: -720px;
+
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 `
 
 export const ContentWrapper = styled.div`
