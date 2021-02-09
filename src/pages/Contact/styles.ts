@@ -4,7 +4,6 @@ import LayoutBase from '../../components/LayoutBase';
 
 export const Wrapper = styled(LayoutBase)`
   background-color: #000;
-
 `
 
 export const ContentWrapper = styled.section`
@@ -16,7 +15,11 @@ export const ContentWrapper = styled.section`
   padding-top: 60px;
   padding-bottom: 60px;
   padding-left: 115px;
-  `
+
+  @media (max-width: 1200px){
+    padding-left: 35px;
+  }
+`
 
 export const Title = styled.h1`
   line-height: 10px;
@@ -27,6 +30,14 @@ export const Title = styled.h1`
 
   color:#70EAA6;
   margin-bottom: 45px;
+
+  @media (max-width: 660px){
+    margin-bottom: 30px;
+    margin-top: 24px;
+    font-size: 36px;
+    width: 80%;
+    line-height: 40px;
+  }
 `
 
 export const Description = styled.p`
@@ -34,11 +45,14 @@ export const Description = styled.p`
 
   line-height: 26px;
 
-  margin-bottom: 30px;
-
   span {
     color: #fff;
     font-weight: bold;
+  }
+
+  @media (max-width: 660px){
+    font-size: 14px;
+    width: 220px;
   }
 `
 
@@ -46,6 +60,12 @@ export const Form = styled.form`
   display: flex;
 
   overflow: visible;
+  margin-top: 40px;
+
+  @media (max-width: 660px){
+    flex-direction: column;
+    width: 100%;
+  }
 `
 
 export const InputsColumns = styled.div`
@@ -54,6 +74,13 @@ export const InputsColumns = styled.div`
   & + div {
     margin-left: 30px;
   }
+
+  @media (max-width: 660px){
+    & + div {
+      margin-left: 0px;
+    }
+  }
+
 `
 
 export const InputWrapper = styled.div`
@@ -114,6 +141,14 @@ export const InputWrapper = styled.div`
       -webkit-background-clip: text;
     }
   }
+
+  @media (max-width: 660px){
+    width: 92%;
+
+    input, textarea {
+      width: 100%;
+    }
+  }
 `
 
 export const Button = styled.button`
@@ -129,6 +164,12 @@ export const Button = styled.button`
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  @media (max-width: 660px){
+    float: none;
+    width: 92%;
+    margin: 0 auto;
   }
 `
 

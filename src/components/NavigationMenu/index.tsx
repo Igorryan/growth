@@ -11,6 +11,7 @@ import LogoBlack from '../../assets/img/logo-black.png'
 import AmazonLogo from '../../assets/icons/amazonwebservices.svg';
 import BMALogo from '../../assets/icons/bma-advogados-logo.svg'
 import LinkedinIcon from '../../assets/icons/linkedin.svg'
+import MenuIcon from '../../assets/icons/two-arrow-right.svg'
 
 const data = [
   {
@@ -49,6 +50,7 @@ const NavigationMenu: React.FC = () => {
   const location = useLocation().pathname;
 
   const [menuVisible, setMenuVisible] = useState(true)
+  const [showMenuActive, setShowMenuActive] = useState(true)
   const [linkSelected, setLinkSelected] = useState(1)
   const asideRef = useRef<HTMLDivElement>(null);
 
@@ -57,6 +59,14 @@ const NavigationMenu: React.FC = () => {
 
     window.addEventListener('resize', () => {
       applyResponsivenessEffect()
+    })
+
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 30){
+        setShowMenuActive(false)
+      }else{
+        setShowMenuActive(true)
+      }
     })
 
     function applyResponsivenessEffect() {
@@ -101,14 +111,17 @@ const NavigationMenu: React.FC = () => {
 
   const handleNavigate = useCallback((id) => {
     setLinkSelected(id)
-    setMenuVisible(false)
     window.scrollTo(0, 0);
+    if(window.innerWidth <= 1001){
+      setMenuVisible(false);
+    }
   }, [])
 
   return (
     <S.Wrapper ref={asideRef} visible={menuVisible}>
-
-      <S.ButtonShowMenu onClick={() => setMenuVisible(!menuVisible)} visible={!menuVisible} />
+      <S.ButtonShowMenu active={showMenuActive} onClick={() => setMenuVisible(!menuVisible)} visible={!menuVisible}>
+        <img src={MenuIcon} alt=""/>
+      </S.ButtonShowMenu>
 
       <div style={{ width: '100%' }}>
         <S.ButtonBack src={ButtonBack} onClick={() => setMenuVisible(!menuVisible)}></S.ButtonBack>

@@ -11,7 +11,7 @@ export const Wrapper = styled.main`
   height: 377px;
 
   @media (max-width: 500px){
-    width: 300px;
+    width: 86%;
   }
 `
 
@@ -58,7 +58,7 @@ export const Title = styled.h1`
   margin-bottom: 20px;
 
   @media (max-width: 500px){
-    font-size: 32px;
+    font-size: 38px;
   }
 `
 

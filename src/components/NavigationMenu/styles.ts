@@ -3,14 +3,9 @@ import {NavLink} from 'react-router-dom'
 
 import ArrowIllustration from '../../assets/illustrations/arrow.svg'
 
-import MenuIcon from '../../assets/icons/two-arrow-right.svg'
-
 interface MenuProps {
-  visible: boolean;
-}
-
-interface LinkProps {
-  active: boolean
+  visible?: boolean;
+  active?: boolean;
 }
 
 const loadingAnimation = keyframes`
@@ -28,7 +23,7 @@ export const Wrapper = styled.aside<MenuProps>`
   flex-direction: column;
   justify-content: space-between;
 
-  padding-top: 20px;
+  padding-top: 24px;
 
   position: fixed;
   top: 0;
@@ -62,27 +57,38 @@ export const Wrapper = styled.aside<MenuProps>`
 
 export const ButtonShowMenu = styled.div<MenuProps>`
   position: absolute;
-  right: -56px;
+  right: -50px;
 
-  background: url(${MenuIcon}) no-repeat;
-  background-size: cover;
+  background-color: #000;
+  padding-left: 14px;
 
   display: flex;
   align-items: center;
-  justify-content: center;
 
-  width: 32px;
-  height: 32px;
-  padding: 1px;
+  width: 50px;
+  height: 44px;
+
+  border-radius: 0 100px 100px 0;
 
   cursor: pointer;
 
   transition: all 0.3s;
   transition-delay: 0.3s;
 
+  img {
+    width: 26px;
+    height: 26px;
+  }
+
   ${props => !props.visible && css`
     transform: scale(0);
     transition-delay: 0s;
+  `}
+
+  ${props => !props.active && props.visible && css`
+    transform: translateX(-22px);
+    transition-delay: 0s;
+    opacity: 0.4;
   `}
 `
 
@@ -167,7 +173,7 @@ export const OptionsList = styled.ul`
   font-size: 14px;
 `
 
-export const Link = styled(NavLink)<LinkProps>`
+export const Link = styled(NavLink)<MenuProps>`
   text-decoration: none;
   color: #fff;
   margin-bottom: 20px;
