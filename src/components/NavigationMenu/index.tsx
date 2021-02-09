@@ -127,8 +127,8 @@ const NavigationMenu: React.FC = () => {
         </ul>
 
         <S.LogosWrapper>
-          <img src={AmazonLogo} alt="" />
-          <img src={BMALogo} width={110} alt="" />
+          <img src={AmazonLogo} width={70} alt="" />
+          <img src={BMALogo} width={100} alt="" />
         </S.LogosWrapper>
 
         <S.Button>

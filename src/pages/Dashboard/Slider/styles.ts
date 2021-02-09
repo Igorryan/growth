@@ -6,8 +6,13 @@ interface SliderProps {
 
 export const Wrapper = styled.main`
   position: relative;
-  min-width: 370px;
+  width: 370px;
+  max-width: 370px;
   height: 377px;
+
+  @media (max-width: 500px){
+    width: 300px;
+  }
 `
 
 export const Header = styled.header`
@@ -47,7 +52,15 @@ export const Title = styled.h1`
   text-transform: uppercase;
   font-size: 43px;
 
+  width: 80%;
+  overflow: visible;
+
   margin-bottom: 20px;
+
+  @media (max-width: 500px){
+    font-size: 32px;
+
+  }
 `
 
 export const Description = styled.p`

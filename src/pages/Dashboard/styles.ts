@@ -12,6 +12,8 @@ export const Wrapper = styled(LayoutBase)`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  overflow: hidden;
 `
 
 export const ContentWrapper = styled.div`
@@ -30,7 +32,37 @@ export const ContentWrapper = styled.div`
   }
 
   @media (max-width: 1400px){
-    margin-left: 30px;
+    margin-left: 70px;
   }
 
+  @media (max-width: 1000px){
+    margin-left: 0px;
+    justify-content: center;
+
+    > img {
+      width: 270px;
+    }
+  }
+
+  @media (max-width: 800px){
+    justify-content: flex-start;
+    flex-direction: column;
+    
+    margin-top: 95px;
+
+    height: max-content;
+
+    > img {
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 400px;
+    }
+  }
+
+  @media (max-width: 800px) and (max-height: 1000px){
+    > img {
+      display: none;
+    }
+  }
 `

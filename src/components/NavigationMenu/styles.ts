@@ -100,6 +100,16 @@ export const ButtonBack = styled.img`
   @media (max-width: 1400px){
     visibility: visible;
   }
+
+  @media (max-width: 500px){
+    position: absolute;
+    right: 0px;
+  }
+
+  @media (max-height: 700px){
+    position: absolute;
+    right: 0px;
+  }
 `
 
 export const OptionsListWrapper = styled.div`
@@ -107,6 +117,14 @@ export const OptionsListWrapper = styled.div`
   flex-direction: column;
 
   margin-left: 68px;
+
+  @media (max-width: 500px){
+    margin-left: 44px;
+  }
+
+  @media (max-height: 700px){
+    margin-left: 44px;
+  }
 `
 
 export const LogoSVG = styled.img`
@@ -114,11 +132,33 @@ export const LogoSVG = styled.img`
   height: 50px;
   
   margin-bottom: 57px;
+
+  @media (max-width: 500px){
+    width: 40px;
+    height: 40px;
+
+    margin-bottom: 30px;
+  }
+
+  @media (max-height: 700px){
+    width: 40px;
+    height: 40px;
+
+    margin-bottom: 30px;
+  }
 `;
 
 export const TitleSVG = styled.img`
   width: 130px;
   margin-bottom: 57px;
+
+  @media (max-width: 500px){
+    margin-bottom: 30px;
+  }
+
+  @media (max-height: 700px){
+    margin-bottom: 30px;
+  }
 `;
 
 export const OptionsList = styled.ul`
@@ -173,15 +213,31 @@ export const Footer = styled.footer`
       color: #838383;
     }
   }
+
+  @media (max-width: 500px){
+    ul {
+    margin-bottom: 12px;
+    }
+  }
+
+  @media (max-height: 700px){
+    ul {
+    margin-bottom: 12px;
+    }
+  }
 `
 
 export const LogosWrapper = styled.div`
-    margin-left: 44px;
-    margin-bottom: 32px;
-  
-    img:first-of-type {
-      margin-right: 12px;
-    }
+  margin-left: 44px;
+  margin-bottom: 32px;
+
+  img:first-of-type {
+    margin-right: 12px;
+  }
+
+  @media (max-height: 570px){
+    display: none;
+  }
 `
 
 export const Button = styled.button`

@@ -12,5 +12,9 @@ export const Wrapper = styled.main`
   @media (max-width: 1400px){
     padding-left: 50px;
   }
+
+  @media (max-width: 500px){
+    padding: 0;
+  }
 `
 
