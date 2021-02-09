@@ -27,7 +27,7 @@ export const ContentWrapper = styled.section`
 `
 
 export const Title = styled.h1`
-  font-size: 43px;
+  font-size: 40px;
   text-transform: uppercase;
 
   color:#70EAA6;

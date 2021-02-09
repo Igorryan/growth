@@ -15,6 +15,11 @@ export const Wrapper = styled.main`
   min-height: 100vh;
 
   position: relative;
+
+  @media (max-width: 1000px){
+    align-items: flex-start;
+    justify-content: center;
+  }
 `
 
 export const ContentWrapper = styled.section`
@@ -25,9 +30,21 @@ export const ContentWrapper = styled.section`
 
   width: max-content;
   min-height: 584px;
-  padding-bottom:60px;
-
   padding-left: 150px;
+
+  @media (max-width: 1200px){
+    padding-left: 35px;
+  }
+
+  @media (max-width: 1000px){
+    padding-top: 60px;
+    padding-left: 0px;
+  }
+
+  @media (max-width: 580px){
+    min-height: 0;
+    width: 86%;
+  }
 `
 
 export const Title = styled.h1`
@@ -38,6 +55,11 @@ export const Title = styled.h1`
   font-weight: 700;
 
   margin-bottom: 70px;
+
+  @media (max-width: 500px){
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
 `
 
 export const Logo = styled.img`
@@ -55,12 +77,20 @@ export const Description = styled.p`
   font-size: 14px;
 
   margin-bottom: 34px;
+
+  @media (max-width: 580px){
+    width: 86%;
+  }
 `
 
 export const OptionsWrapper = styled.ul`
   display: grid;
   grid-template-columns: 288px 288px;
   gap: 15px;
+
+  @media (max-width: 680px){
+    grid-template-columns: 1fr;
+  }
 `
 
 export const Option = styled.li<OptionsProps>`
@@ -96,13 +126,11 @@ export const Option = styled.li<OptionsProps>`
 `
 
 export const NavigationBar = styled.div`
-  position: absolute;
-  bottom: 0;
-
   display: flex;
   align-items: center;
 
   width: 100%;
+  margin: 30px 0;
 
   svg {
     cursor: pointer;
@@ -110,6 +138,10 @@ export const NavigationBar = styled.div`
     path {
       transition: all 0.2s; 
     }
+  }
+
+  @media (max-width: 500px) {
+    justify-content: center;
   }
 `
 
