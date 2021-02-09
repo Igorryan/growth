@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as S from './styles';
 
 import BackgroundImage from '../../assets/img/background-corporate.png';
-import SliderHowWeDo from '../../components/SliderHowWeDo';
+import SliderHowWeDo from './Slider';
 
 const HowWeDo: React.FC = () => {
   const [background, setBackground] = useState(BackgroundImage)

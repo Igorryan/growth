@@ -3,8 +3,8 @@ import * as S from './styles';
 
 import {useHistory} from 'react-router-dom'
 
-import BackgroundCorporate from '../../assets/img/background-corporate.png';
-import BackgroundStartup from '../../assets/img/background-startup.png';
+import BackgroundCorporate from '../../../assets/img/background-corporate.png';
+import BackgroundStartup from '../../../assets/img/background-startup.png';
 
 interface Props {
   changeBackground(background: string): void;

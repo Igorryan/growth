@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import * as S from './styles';
 
-import Logo2Shared from '../../assets/img/logo-2share.png'
-import Logo2Zoboo from '../../assets/icons/logo-zoboo-white.svg'
-import Logo2Feedback from '../../assets/icons/logo-feedbackhunter-white.svg'
+import Logo2Shared from '../../../assets/img/logo-2share.png'
+import Logo2Zoboo from '../../../assets/icons/logo-zoboo-white.svg'
+import Logo2Feedback from '../../../assets/icons/logo-feedbackhunter-white.svg'
 
 const data = [
   {

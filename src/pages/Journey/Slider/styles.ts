@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-import ArrowMinIcon from '../../assets/icons/arrow-min.svg'
+import ArrowMinIcon from '../../../assets/icons/arrow-min.svg'
 
 interface SliderProps {
   active?: boolean;

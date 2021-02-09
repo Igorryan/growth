@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './styles';
 
-import SliderJourney from '../../components/SliderJourney';
+import SliderJourney from './Slider';
 
 import Sculpture from '../../assets/img/sculpture.png';
 
