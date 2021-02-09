@@ -9,7 +9,7 @@ interface SliderProps {
 export const Wrapper = styled.main`
   position: relative;
   width: 384px;
-  height: 297px;
+  height: 317px;
   overflow: visible;
 `
 
@@ -47,7 +47,7 @@ export const Description = styled.p`
   margin-top: 12px;
 
   color: #B1B1B1;
-  width: 384px;
+  width: 334px;
   font-size: 14px;
   line-height: 24px;
 `

@@ -78,8 +78,11 @@ const NavigationMenu: React.FC = () => {
     if (asideRef.current.contains(e.target)) {
       return;
     }
+
+    if(window.innerWidth <= 1401){
+      setMenuVisible(false);
+    }
     
-    setMenuVisible(false);
   }, [])
 
   useEffect(() => {

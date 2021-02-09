@@ -29,4 +29,8 @@ export const ContentWrapper = styled.div`
     margin-left: 200px;
   }
 
+  @media (max-width: 1400px){
+    margin-left: 30px;
+  }
+
 `

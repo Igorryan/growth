@@ -6,7 +6,7 @@ interface SliderProps {
 
 export const Wrapper = styled.main`
   position: relative;
-  width: 370px;
+  min-width: 370px;
   height: 377px;
 `
 
