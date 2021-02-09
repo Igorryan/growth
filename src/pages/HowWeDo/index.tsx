@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as S from './styles';
 
-import BackgroundImage from '../../assets/img/background-corporate.png';
 import SliderHowWeDo from './Slider';
 
 const HowWeDo: React.FC = () => {
-  const [background, setBackground] = useState(BackgroundImage)
 
   return (
-    <S.Wrapper style={{backgroundImage: `url(${background})`}}>
+    <S.Wrapper>
       <S.ContentWrapper>
-        <SliderHowWeDo changeBackground={setBackground} />
+        <SliderHowWeDo />
       </S.ContentWrapper>
     </S.Wrapper>
   )

@@ -2,13 +2,8 @@ import React, { useCallback, useState } from 'react';
 import * as S from './styles';
 
 import {useHistory} from 'react-router-dom'
-
-import BackgroundCorporate from '../../../assets/img/background-corporate.png';
-import BackgroundStartup from '../../../assets/img/background-startup.png';
-
-interface Props {
-  changeBackground(background: string): void;
-}
+import GrowthCorporateImage from '../../../assets/img/h1-growth-corporate.svg'
+import GrowthStartupImage from '../../../assets/img/h1-growth-startup.svg'
 
 const data = [
   {
@@ -17,7 +12,7 @@ const data = [
     sobtitle: 'Como podemos ajudar',
     description: 'Trabalhamos com inovação e novos negócios em grandes empresas. Otimizamos os processos de vendas, marketing, tecnologia e serviços financeiros com nosso time de especialistas que atuam no mercado há mais de 15 anos.',
     buttonText: 'Fale com um especialista',
-    backgroundImage: BackgroundCorporate,
+    titleImage: GrowthCorporateImage
   },
   {
     id: 2,
@@ -25,17 +20,16 @@ const data = [
     sobtitle: 'Como podemos ajudar',
     description: 'Identificamos, investimos e acompanhamos os melhores empreendedores com suas startups. Otimizamos e crescemos juntos até o exit do negócio.',
     buttonText: 'Envie seu pitch deck',
-    backgroundImage: BackgroundStartup,
+    titleImage: GrowthStartupImage
   },
   {
     id: 3,
     title: 'O que é Venture Builder',
     description: 'São empresas que investem, constroem e desenvolvem empresas através de recursos próprios, desde infraestrutura física até recursos humanos. Em contrapartida, ganham participação acionária na na empresa criada até o break-even point (ou ponto de equilíbrio), quando a empresa de fato começa a ter lucro.',
-    backgroundImage: BackgroundCorporate,
   },
 ]
 
-const SliderHowWeDo: React.FC<Props> = ({changeBackground}) => {
+const SliderHowWeDo: React.FC = () => {
   const [currentItem, setCurrentItem] = useState(data[0])
   const history = useHistory();
 
@@ -47,11 +41,12 @@ const SliderHowWeDo: React.FC<Props> = ({changeBackground}) => {
     }
 
     setCurrentItem(item)
-    changeBackground(item.backgroundImage)
-  }, [changeBackground])
+  }, [])
 
   return (
     <S.Wrapper>
+      {currentItem.titleImage && <S.TitleImage src={currentItem.titleImage} />}
+
       {currentItem.sobtitle && <S.Sobtitle>{currentItem.sobtitle}</S.Sobtitle>}
 
       <S.Title>{currentItem.title}</S.Title>

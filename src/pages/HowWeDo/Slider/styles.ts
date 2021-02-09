@@ -11,6 +11,7 @@ export const Wrapper = styled.main`
   flex-direction: column;
 
   width: 456px;
+  max-width: 456px;
   height: 707px;
 
   background: #1E1E1E;
@@ -34,12 +35,51 @@ export const Wrapper = styled.main`
     bottom: 110px;
     right: 30px;
   }
+
+  @media (max-width: 600px){
+    width: 92%;
+  }
+
+  @media (max-width: 450px){
+    height: 70vh;
+    padding: 50px;
+    padding-top: 70px;
+
+    > svg:nth-of-type(1) {
+      width: 40px;
+
+      top: -70px;
+      left: 20px;
+    }
+
+    > svg:nth-of-type(2) {
+      bottom: 10px;
+      right: 20px;
+    }
+  }
+`
+
+export const TitleImage = styled.img`
+  position: absolute;
+  right: -200px;
+  bottom: 30px;
+
+  transition: opacity 0.4s;
+
+  @media (max-width: 760px){
+    opacity: 0;
+  }
 `
 
 export const Sobtitle = styled.strong`
   margin-bottom: 10px;
 
+  overflow: visible;
   text-transform: uppercase;
+
+  @media (max-width: 450px){
+    font-size: 14px;
+  }
 `
 
 export const Title = styled.h1`
@@ -53,6 +93,10 @@ export const Title = styled.h1`
   margin-bottom: 14px;
 
   overflow: visible;
+
+  @media (max-width: 450px){
+    font-size: 32px;
+  }
 `
 
 export const Description = styled.p`
@@ -62,6 +106,12 @@ export const Description = styled.p`
   color: #B1B1B1;
   font-size: 14px;
   line-height: 24px;
+
+  @media (max-width: 450px){
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 16px;
+  }
 `
 
 export const Button = styled.button`
@@ -70,6 +120,10 @@ export const Button = styled.button`
   border: none;
   border-radius: 100px;
   margin-top: 40px;
+
+  @media (max-width: 450px){
+    padding: 12px 20px;
+  }
 `
 
 export const NavigationBar = styled.div`
@@ -86,6 +140,12 @@ export const NavigationBar = styled.div`
     path {
       transition: all 0.2s; 
     }
+  }
+
+  @media (max-width: 450px){
+    justify-content: center;
+    width: 100%;
+    right: 0;
   }
 `
 
