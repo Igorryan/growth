@@ -22,6 +22,12 @@ const loadingAnimation = keyframes`
 `
 
 export const Wrapper = styled.aside<MenuProps>`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-top: 20px;
+
   position: fixed;
   top: 0;
 
@@ -53,20 +59,21 @@ export const Wrapper = styled.aside<MenuProps>`
 `
 
 export const ButtonBack = styled.img`
-  display: none;
-  position: absolute;
+  float: right;
 
-  top: 20px;
-  right: 24px;
+  visibility: hidden;
+  
+  width: 24px;
+  height: 24px;
+
+  margin-right: 24px;
 `
 
 export const OptionsListWrapper = styled.div`
-  position: absolute;
   display: flex;
   flex-direction: column;
 
-  left: 72px;
-  top: 126px;
+  margin-left: 68px;
 `
 
 export const LogoSVG = styled.img`
@@ -120,9 +127,6 @@ export const Link = styled(NavLink)<LinkProps>`
 `
 
 export const Footer = styled.footer`
-  position: absolute;
-  bottom: 0;
-
   width: 100%;
 
   ul {

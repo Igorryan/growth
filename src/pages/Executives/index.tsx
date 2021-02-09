@@ -39,7 +39,7 @@ const data = [
     image: MatheusProfile,
     name: 'Matheus Barcelos',
     occupation: 'Advogado',
-    linkedin: ''
+    linkedin: 'matheusbarcelosmartins'
   },
   {
     image: LeandroProfile,

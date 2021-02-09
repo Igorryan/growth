@@ -1,9 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import * as S from './styles';
 
+import {useHistory} from 'react-router-dom'
+
 import BackgroundCorporate from '../../assets/img/background-corporate.png';
 import BackgroundStartup from '../../assets/img/background-startup.png';
-import BackgroundVenture from '../../assets/img/background-venture.png';
 
 interface Props {
   changeBackground(background: string): void;
@@ -15,7 +16,7 @@ const data = [
     title: 'Growth Corporate',
     sobtitle: 'Como podemos ajudar',
     description: 'Trabalhamos com inovação e novos negócios em grandes empresas. Otimizamos os processos de vendas, marketing, tecnologia e serviços financeiros com nosso time de especialistas que atuam no mercado há mais de 15 anos.',
-    buttonText: 'Fale com o especialista',
+    buttonText: 'Fale com um especialista',
     backgroundImage: BackgroundCorporate,
   },
   {
@@ -30,12 +31,13 @@ const data = [
     id: 3,
     title: 'O que é Venture Builder',
     description: 'São empresas que investem, constroem e desenvolvem empresas através de recursos próprios, desde infraestrutura física até recursos humanos. Em contrapartida, ganham participação acionária na na empresa criada até o break-even point (ou ponto de equilíbrio), quando a empresa de fato começa a ter lucro.',
-    backgroundImage: BackgroundVenture,
+    backgroundImage: BackgroundCorporate,
   },
 ]
 
 const SliderHowWeDo: React.FC<Props> = ({changeBackground}) => {
   const [currentItem, setCurrentItem] = useState(data[0])
+  const history = useHistory();
 
   const handleChange = useCallback((toIndex: number) => {
     const item = data.find(d => d.id === toIndex);
@@ -56,7 +58,7 @@ const SliderHowWeDo: React.FC<Props> = ({changeBackground}) => {
 
       <S.Description>{currentItem.description}</S.Description>
 
-      {currentItem.buttonText && <S.Button>{currentItem.buttonText}</S.Button>}
+      {currentItem.buttonText && <S.Button onClick={() => {history.push('/contact')}}>{currentItem.buttonText}</S.Button>}
   
       <S.NavigationBar>
         <S.PrevButton onClick={() => handleChange(currentItem.id-1)} active={currentItem.id !== 1} width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">

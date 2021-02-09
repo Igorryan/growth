@@ -41,7 +41,12 @@ export const Title = styled.h1`
 `
 
 export const Logo = styled.img`
-  width: 234px;
+  width: max-content;
+  height: 80px;
+  
+  object-fit: contain;
+  object-position: 0 0;
+  
   margin-bottom: 25px;
 `
 

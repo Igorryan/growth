@@ -2,6 +2,8 @@ import React, { useCallback, useState } from 'react';
 import * as S from './styles';
 
 import Logo2Shared from '../../assets/img/logo-2share.png'
+import Logo2Zoboo from '../../assets/icons/logo-zoboo-white.svg'
+import Logo2Feedback from '../../assets/icons/logo-feedbackhunter-white.svg'
 
 const data = [
   {
@@ -13,14 +15,14 @@ const data = [
   },
   {
     id: 2,
-    logo: Logo2Shared,
+    logo: Logo2Zoboo,
     description: 'Criação de plataforma de experiência do cliente para tomada de decisão baseada em dados coletados.',
     tags: ['Customer Experience', 'CX', 'Sucesso do Cliente'],
     link: 'feedbackhunter.com.br'
   },
   {
     id: 3,
-    logo: Logo2Shared,
+    logo: Logo2Feedback,
     description: 'Marketplace de influenciadoras digitais integrada a sistemas bancários de alta performance.',
     tags: ['Banking', 'Marketplace', 'Influencer'],
     link: 'zoboobeauty.com.br'

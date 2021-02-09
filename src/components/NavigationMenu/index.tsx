@@ -8,7 +8,7 @@ import Icon from '../../assets/icons/icon.svg';
 import Logo from '../../assets/icons/logo.svg';
 import LogoBlack from '../../assets/img/logo-black.png'
 import AmazonLogo from '../../assets/icons/amazonwebservices.svg';
-import BMALogo from '../../assets/img/bma-advogados-logo.png'
+import BMALogo from '../../assets/icons/bma-advogados-logo.svg'
 import LinkedinIcon from '../../assets/icons/linkedin.svg'
 
 const data = [
@@ -57,7 +57,9 @@ const NavigationMenu: React.FC = () => {
 
   return (
     <S.Wrapper visible={menuVisible}>
-      <S.ButtonBack src={ButtonBack} onClick={() => setMenuVisible(!menuVisible)}></S.ButtonBack>
+      <div style={{width: '100%'}}>
+        <S.ButtonBack src={ButtonBack} onClick={() => setMenuVisible(!menuVisible)}></S.ButtonBack>
+      </div>
   
       <S.OptionsListWrapper>
         <S.LogoSVG src={Icon} />
@@ -79,7 +81,7 @@ const NavigationMenu: React.FC = () => {
   
         <S.LogosWrapper>
           <img src={AmazonLogo} alt=""/>
-          <img src={BMALogo} alt=""/>
+          <img src={BMALogo} width={110} alt=""/>
         </S.LogosWrapper>
   
         <S.Button>
