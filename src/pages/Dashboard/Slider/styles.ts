@@ -59,7 +59,6 @@ export const Title = styled.h1`
 
   @media (max-width: 500px){
     font-size: 32px;
-
   }
 `
 
@@ -68,6 +67,10 @@ export const Description = styled.p`
   width: 280px;
   font-size: 14px;
   line-height: 24px;
+
+  @media (max-width: 800px){
+    width: 100%;
+  }
 `
 
 export const NavigationBar = styled.div`

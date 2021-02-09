@@ -10,7 +10,12 @@ export const Wrapper = styled.main`
   position: relative;
   width: 384px;
   height: 317px;
+
   overflow: visible;
+
+  @media (max-width: 800px){
+    width: 300px;
+  }
 `
 
 export const Title = styled.h1`
@@ -36,6 +41,14 @@ export const Title = styled.h1`
     background: url(${ArrowMinIcon}) no-repeat center;
     background-size: cover;
   }
+
+  @media (max-width: 800px){
+    &::after {
+      top: 38px;
+      left: 166px;
+    }
+  }
+
 `
 
 export const Subtitle = styled.strong`
@@ -50,6 +63,10 @@ export const Description = styled.p`
   width: 334px;
   font-size: 14px;
   line-height: 24px;
+
+  @media (max-width: 800px){
+    width: 100%;
+  }
 `
 
 export const NavigationBar = styled.div`
@@ -68,6 +85,11 @@ export const NavigationBar = styled.div`
       transition: all 0.2s; 
     }
   }
+
+  @media (max-width: 800px){
+    justify-content: center;
+  }
+  
 `
 
 export const PrevButton = styled.svg<SliderProps>`
