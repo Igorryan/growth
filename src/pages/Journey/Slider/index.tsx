@@ -36,13 +36,11 @@ const Slider: React.FC = () => {
     const item = data.find(d => d.id === toIndex);
 
     if(!item){
-      console.log(currentItem)
-      console.log(toIndex)
       return;
     }
 
     setCurrentItem(item)
-  }, [currentItem])
+  }, [])
 
   return (
     <S.Wrapper>

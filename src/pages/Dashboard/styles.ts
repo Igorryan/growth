@@ -24,4 +24,9 @@ export const ContentWrapper = styled.div`
   > img {
     margin-right: 67px;
   }
+
+  @media (min-width: 2370px){
+    margin-left: 200px;
+  }
+
 `

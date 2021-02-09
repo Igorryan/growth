@@ -7,5 +7,10 @@ export const Wrapper = styled.main`
   min-height: 100vh;
 
   padding-left: 324px;
+
+
+  @media (max-width: 1400px){
+    padding-left: 50px;
+  }
 `
 

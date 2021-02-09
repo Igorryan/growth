@@ -2,7 +2,6 @@ import React from 'react';
 import * as S from './styles';
 
 import Slider from './Slider';
-
 import Sculpture from '../../assets/img/sculpture.png';
 
 const Dashboard: React.FC = () => {

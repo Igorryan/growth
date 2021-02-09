@@ -3,12 +3,14 @@ import {NavLink} from 'react-router-dom'
 
 import ArrowIllustration from '../../assets/illustrations/arrow.svg'
 
+import MenuIcon from '../../assets/icons/two-arrow-right.svg'
+
 interface MenuProps {
   visible: boolean;
 }
 
 interface LinkProps {
-  active?: boolean
+  active: boolean
 }
 
 const loadingAnimation = keyframes`
@@ -38,7 +40,7 @@ export const Wrapper = styled.aside<MenuProps>`
 
   transition: all 0.3s ease-in-out;
 
-  overflow-y: hidden;
+  overflow: visible;
 
   &::before {
     content: '';
@@ -58,6 +60,32 @@ export const Wrapper = styled.aside<MenuProps>`
   `}
 `
 
+export const ButtonShowMenu = styled.div<MenuProps>`
+  position: absolute;
+  right: -56px;
+
+  background: url(${MenuIcon}) no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  padding: 1px;
+
+  cursor: pointer;
+
+  transition: all 0.3s;
+  transition-delay: 0.3s;
+
+  ${props => !props.visible && css`
+    transform: scale(0);
+    transition-delay: 0s;
+  `}
+`
+
 export const ButtonBack = styled.img`
   float: right;
 
@@ -67,6 +95,11 @@ export const ButtonBack = styled.img`
   height: 24px;
 
   margin-right: 24px;
+  cursor: pointer;
+
+  @media (max-width: 1400px){
+    visibility: visible;
+  }
 `
 
 export const OptionsListWrapper = styled.div`

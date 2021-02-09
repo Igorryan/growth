@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+
 import * as S from './styles';
 
-import {useLocation} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import ButtonBack from '../../assets/icons/arrow-back-in-container.svg';
 import Icon from '../../assets/icons/icon.svg';
@@ -49,6 +50,45 @@ const NavigationMenu: React.FC = () => {
 
   const [menuVisible, setMenuVisible] = useState(true)
   const [linkSelected, setLinkSelected] = useState(1)
+  const asideRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    applyResponsivenessEffect()
+
+    window.addEventListener('resize', () => {
+      applyResponsivenessEffect()
+    })
+
+    function applyResponsivenessEffect() {
+      if (window.innerWidth < 1400) {
+        setMenuVisible(false)
+        return false;
+      }
+      
+      setMenuVisible(true)
+      return true;
+    }
+  }, [])
+
+  const handleClickAsideComponent = useCallback((e) => {
+    if(!asideRef.current){
+      return
+    }
+
+    if (asideRef.current.contains(e.target)) {
+      return;
+    }
+    setMenuVisible(false);
+  }, [])
+
+  useEffect(() => {
+    // add when mounted
+    document.addEventListener("mousedown", handleClickAsideComponent);
+    // return function to be called when unmounted
+    return () => {
+      document.removeEventListener("mousedown", handleClickAsideComponent);
+    };
+  }, [handleClickAsideComponent]);
 
   useMemo(() => {
     const currentPage = data.find(l => l.route.indexOf(location) >= 0);
@@ -56,37 +96,40 @@ const NavigationMenu: React.FC = () => {
   }, [location])
 
   return (
-    <S.Wrapper visible={menuVisible}>
-      <div style={{width: '100%'}}>
+    <S.Wrapper ref={asideRef} visible={menuVisible}>
+
+      <S.ButtonShowMenu onClick={() => setMenuVisible(!menuVisible)} visible={!menuVisible} />
+
+      <div style={{ width: '100%' }}>
         <S.ButtonBack src={ButtonBack} onClick={() => setMenuVisible(!menuVisible)}></S.ButtonBack>
       </div>
-  
+
       <S.OptionsListWrapper>
         <S.LogoSVG src={Icon} />
         <S.TitleSVG src={Logo} />
-  
+
         <S.OptionsList>
-          {data.map(({id, route, name}) => (
+          {data.map(({ id, route, name }) => (
             <S.Link key={id} active={linkSelected === id} onClick={() => setLinkSelected(id)} to={route}>{name}</S.Link>
           ))}
         </S.OptionsList>
       </S.OptionsListWrapper>
-  
+
       <S.Footer>
         <ul>
           <li><img src={LogoBlack} alt="" /></li>
-          <li style={{marginBottom: '8px'}}>Termo de Uso</li>
+          <li style={{ marginBottom: '8px' }}>Termo de Uso</li>
           <li>Política de Privacidade</li>
         </ul>
-  
+
         <S.LogosWrapper>
-          <img src={AmazonLogo} alt=""/>
-          <img src={BMALogo} width={110} alt=""/>
+          <img src={AmazonLogo} alt="" />
+          <img src={BMALogo} width={110} alt="" />
         </S.LogosWrapper>
-  
+
         <S.Button>
-          Rede social 
-          <img src={LinkedinIcon} alt=""/>
+          Rede social
+          <img src={LinkedinIcon} alt="" />
         </S.Button>
       </S.Footer>
     </S.Wrapper>
