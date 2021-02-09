@@ -5,8 +5,7 @@ const Contact: React.FC = () => (
   <S.Wrapper>
     <S.ContentWrapper>
       <S.Title>Vamos conversar?</S.Title>
-      <S.Description>Você também pode nos encontrar nos seguintes canais:<br /><span>Email: contato@growth.sale | Telefone: (xx) xxxx-xxxx</span></S.Description>
-      <S.Description></S.Description>
+      <S.Description>Você também pode nos encontrar nos seguintes canais:<br /><span>Email: contato@growth.sale | Telefone: +55 27 99691-3309</span></S.Description>
 
       <S.Form>
         <S.InputsColumns>
