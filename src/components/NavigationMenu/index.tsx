@@ -78,6 +78,7 @@ const NavigationMenu: React.FC = () => {
     if (asideRef.current.contains(e.target)) {
       return;
     }
+    
     setMenuVisible(false);
   }, [])
 

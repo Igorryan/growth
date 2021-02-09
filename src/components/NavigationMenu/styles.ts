@@ -47,7 +47,7 @@ export const Wrapper = styled.aside<MenuProps>`
     position: absolute;
     top: 402px;
 
-    width: 443px;
+    width: 100%;
     height: 426px;
 
     background: url(${ArrowIllustration}) no-repeat;
