@@ -97,7 +97,7 @@ export const ButtonBack = styled.img`
   margin-right: 24px;
   cursor: pointer;
 
-  @media (max-width: 1400px){
+  @media (max-width: 1000px){
     visibility: visible;
   }
 

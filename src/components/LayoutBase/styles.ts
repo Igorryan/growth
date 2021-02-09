@@ -9,7 +9,7 @@ export const Wrapper = styled.main`
   padding-left: 324px;
 
 
-  @media (max-width: 1400px){
+  @media (max-width: 1000px){
     padding-left: 50px;
   }
 

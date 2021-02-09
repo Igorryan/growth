@@ -31,11 +31,11 @@ export const ContentWrapper = styled.div`
     margin-left: 200px;
   }
 
-  @media (max-width: 1400px){
+  @media (max-width: 1000px){
     margin-left: 70px;
   }
 
-  @media (max-width: 1000px){
+  @media (max-width: 1400px){
     margin-left: 0px;
     justify-content: center;
 

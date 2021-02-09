@@ -60,7 +60,7 @@ const NavigationMenu: React.FC = () => {
     })
 
     function applyResponsivenessEffect() {
-      if (window.innerWidth < 1400) {
+      if (window.innerWidth < 1000) {
         setMenuVisible(false)
         return false;
       }
@@ -79,7 +79,7 @@ const NavigationMenu: React.FC = () => {
       return;
     }
 
-    if(window.innerWidth <= 1401){
+    if(window.innerWidth <= 1001){
       setMenuVisible(false);
     }
     
