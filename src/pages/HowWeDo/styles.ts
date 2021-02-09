@@ -5,11 +5,14 @@ import LayoutBase from '../../components/LayoutBase';
 
 export const Wrapper = styled(LayoutBase)`
   background-image: url(${BackgroundImage});
-  background-position-x: 0px !important;
   background-color: #000;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: left;
+
+  @media (max-width: 1200px){
+    background-position: right;
+  }
 `
 
 export const ContentWrapper = styled.div`
