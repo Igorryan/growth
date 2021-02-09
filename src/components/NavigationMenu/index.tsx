@@ -65,7 +65,7 @@ const NavigationMenu: React.FC = () => {
   
         <S.OptionsList>
           {data.map(({id, route, name}) => (
-            <S.Link active={linkSelected === id} onClick={() => setLinkSelected(id)} to={route}>{name}</S.Link>
+            <S.Link key={id} active={linkSelected === id} onClick={() => setLinkSelected(id)} to={route}>{name}</S.Link>
           ))}
         </S.OptionsList>
       </S.OptionsListWrapper>

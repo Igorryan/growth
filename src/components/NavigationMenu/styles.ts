@@ -32,6 +32,8 @@ export const Wrapper = styled.aside<MenuProps>`
 
   transition: all 0.3s ease-in-out;
 
+  overflow-y: hidden;
+
   &::before {
     content: '';
     position: absolute;
