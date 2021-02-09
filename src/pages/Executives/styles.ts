@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import LayoutBase from '../../components/LayoutBase';
+import ArrowMinIcon from '../../assets/icons/arrow-min.svg'
 
 export const Wrapper = styled(LayoutBase)`
   background-color: #191919;
@@ -18,8 +19,11 @@ export const ContentWrapper = styled.section`
   min-height: 100vh;
 
   padding-top: 60px;
-  padding-bottom: 60px;
   padding-left: 115px;
+
+  @media (max-width: 1350px){
+    padding-left: 25px;
+  }
 `
 
 export const Title = styled.h1`
@@ -28,13 +32,39 @@ export const Title = styled.h1`
 
   color:#70EAA6;
   margin-bottom: 45px;
+
+  @media (max-width: 500px){
+    margin-top: 20px;
+  }
 `
 
 export const ExecutivesWrapper = styled.div`
   display: grid;
   grid-template-columns: 250px 250px 250px;
   gap: 12px;
-  `
+
+  @media (max-width: 1150px){
+    margin-right: 50px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 1000px){
+    grid-template-columns: 250px 250px 250px;
+  }
+
+  @media (max-width: 890px){
+    margin-right: 50px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 560px){
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 500px){
+    margin-right: 30px;
+  }
+`
 
 export const Executive = styled.div`
   position: relative;
@@ -51,18 +81,44 @@ export const Executive = styled.div`
 
   border: 1px solid #414141;
   border-radius: 6px;
+
+  @media (max-width: 1150px){
+    width: 100%;
+  }
+
+  @media (max-width: 890px){
+    width: 100%;
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+  }
 `
 
-export const ProfileImage = styled.img`
+export const ProfileImage = styled.div`
   margin-bottom: 30px;
   border: 1px solid #70EAA6;
   border-radius: 50%;
-`
 
-export const ArrowIcon = styled.img`
-  position: absolute;
-  top: 180px;
-  right: 66px;
+  width: 170px;
+  height: 170px;
+  
+  position: relative;
+  overflow: visible;
+
+  &::before {
+    content: '';
+    position: absolute;
+
+    width: 30px;
+    height: 30px;
+
+    bottom: -14px;
+    left: 60%;
+
+    background-image: url(${ArrowMinIcon});
+    background-size: cover;
+  }
 `
 
 export const Name = styled.strong`

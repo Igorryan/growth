@@ -99,6 +99,12 @@ const NavigationMenu: React.FC = () => {
     currentPage && setLinkSelected(currentPage.id)
   }, [location])
 
+  const handleNavigate = useCallback((id) => {
+    setLinkSelected(id)
+    setMenuVisible(false)
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <S.Wrapper ref={asideRef} visible={menuVisible}>
 
@@ -114,7 +120,7 @@ const NavigationMenu: React.FC = () => {
 
         <S.OptionsList>
           {data.map(({ id, route, name }) => (
-            <S.Link key={id} active={linkSelected === id} onClick={() => setLinkSelected(id)} to={route}>{name}</S.Link>
+            <S.Link key={id} active={linkSelected === id} onClick={() => handleNavigate(id)} to={route}>{name}</S.Link>
           ))}
         </S.OptionsList>
       </S.OptionsListWrapper>
