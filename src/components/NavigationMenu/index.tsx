@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import * as S from './styles';
+
+import {useLocation} from 'react-router-dom';
 
 import ButtonBack from '../../assets/icons/arrow-back-in-container.svg';
 import Icon from '../../assets/icons/icon.svg';
@@ -9,9 +11,49 @@ import AmazonLogo from '../../assets/icons/amazonwebservices.svg';
 import BMALogo from '../../assets/img/bma-advogados-logo.png'
 import LinkedinIcon from '../../assets/icons/linkedin.svg'
 
+const data = [
+  {
+    id: 1,
+    route: '/',
+    name: 'O que a Growth faz?',
+  },
+  {
+    id: 2,
+    route: '/journey',
+    name: 'Nossa jornada',
+  },
+  {
+    id: 3,
+    route: '/how-we-do',
+    name: 'Como fazemos?',
+  },
+  {
+    id: 4,
+    route: '/executives',
+    name: 'Executivos',
+  },
+  {
+    id: 5,
+    route: '/portfolio',
+    name: 'Portfólio',
+  },
+  {
+    id: 6,
+    route: '/contact',
+    name: 'Contato',
+  },
+]
+
 const NavigationMenu: React.FC = () => {
+  const location = useLocation().pathname;
+
   const [menuVisible, setMenuVisible] = useState(true)
   const [linkSelected, setLinkSelected] = useState(1)
+
+  useMemo(() => {
+    const currentPage = data.find(l => l.route.indexOf(location) >= 0);
+    currentPage && setLinkSelected(currentPage.id)
+  }, [location])
 
   return (
     <S.Wrapper visible={menuVisible}>
@@ -22,12 +64,9 @@ const NavigationMenu: React.FC = () => {
         <S.TitleSVG src={Logo} />
   
         <S.OptionsList>
-          <S.Link active={linkSelected === 1} onClick={() => setLinkSelected(1)} to="/">O que a Growth faz?</S.Link>
-          <S.Link active={linkSelected === 2} onClick={() => setLinkSelected(2)} to="/journey">Nossa Jornada</S.Link>
-          <S.Link active={linkSelected === 3} onClick={() => setLinkSelected(3)} to="/how-we-do">Como fazemos?</S.Link>
-          <S.Link active={linkSelected === 4} onClick={() => setLinkSelected(4)} to="/executives">Executivos</S.Link>
-          <S.Link active={linkSelected === 5} onClick={() => setLinkSelected(5)} to="/portfolio">Portfólio</S.Link>
-          <S.Link active={linkSelected === 6} onClick={() => setLinkSelected(6)} to="/contact">Contato</S.Link>
+          {data.map(({id, route, name}) => (
+            <S.Link active={linkSelected === id} onClick={() => setLinkSelected(id)} to={route}>{name}</S.Link>
+          ))}
         </S.OptionsList>
       </S.OptionsListWrapper>
   
