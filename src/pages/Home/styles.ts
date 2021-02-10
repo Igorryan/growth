@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-import BackgroundImage from '../../assets/img/background-1.png';
 import LayoutBase from '../../components/LayoutBase';
 
 export const Wrapper = styled(LayoutBase)`
