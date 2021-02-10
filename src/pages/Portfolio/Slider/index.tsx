@@ -31,6 +31,9 @@ const data = [
 
 const SliderCases: React.FC = () => {
   const [currentItem, setCurrentItem] = useState(data[0])
+  const [optionsAnimation, setOptionsAnimation] = useState('in')
+  const [logoAnimation, setLogoAnimation] = useState('in')
+  const [descriptionAnimation, setDescriptionAnimation] = useState('in')
 
   const handleChange = useCallback((toIndex: number) => {
     const item = data.find(d => d.id === toIndex);
@@ -39,25 +42,37 @@ const SliderCases: React.FC = () => {
       return;
     }
 
-    setCurrentItem(item)
+    setOptionsAnimation('out')
+    setLogoAnimation('out')
+    setDescriptionAnimation('out')
+    
+    setTimeout(() => {
+      setCurrentItem(item)
+      setOptionsAnimation('in')
+      setLogoAnimation('in')
+      setDescriptionAnimation('in')
+    }, 200)
+
   }, [])
 
   return (
     <S.Wrapper>
       <S.ContentWrapper>
+
         <S.Title>Portfólio</S.Title>
-        <S.Logo src={currentItem.logo} />
-        <S.Description>{currentItem.description}</S.Description>
+        <S.Logo animation={logoAnimation} src={currentItem.logo} />
+        <S.Description animation={descriptionAnimation}>{currentItem.description}</S.Description>
+
         <S.OptionsWrapper>
           {currentItem.tags.map((tag, i) => (
-            <S.Option key={i}>{tag}</S.Option>
+            <S.Option animation={optionsAnimation} style={{animationDelay: `${(i*0.2)+0.5}s`}} key={i}>{tag}</S.Option>
           ))}
-          <S.Option isLink><a href={`https://${currentItem.link}`} rel="noreferrer" target="_blank">{currentItem.link}</a></S.Option>
+          <S.Option animation={optionsAnimation} style={{animationDelay: `${(currentItem.tags.length*0.2) + 0.5}s`}} isLink><a href={`https://${currentItem.link}`} rel="noreferrer" target="_blank">{currentItem.link}</a></S.Option>
         </S.OptionsWrapper>
 
         <S.NavigationBar>
           <S.PrevButton onClick={() => handleChange(currentItem.id-1)} active={currentItem.id !== 1} width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fillRule="evenodd" clipRule="evenodd" d="M28.0599 13.437C28.1573 14.0755 28.2061 14.7306 28.2061 15.3845C28.2061 22.4537 22.4548 28.205 15.3855 28.205C8.31631 28.205 2.56503 22.4537 2.56503 15.3845C2.56503 8.31525 8.31631 2.56396 15.3855 2.56396C19.3958 2.56396 23.0996 4.38832 25.5484 7.56653C25.8625 7.97422 25.7855 8.5614 25.3791 8.87422C24.9714 9.18961 24.3868 9.1114 24.0702 8.70499C21.9791 5.98576 18.8125 4.42807 15.3855 4.42807C9.34451 4.42807 4.42913 9.34217 4.42913 15.3845C4.42913 21.4255 9.34451 26.3396 15.3855 26.3396C21.4266 26.3396 26.342 21.4255 26.342 15.3845C26.342 14.8242 26.2996 14.264 26.2163 13.7191C26.1394 13.2114 26.4881 12.7358 26.9971 12.6576C27.5086 12.5729 27.9817 12.9281 28.0599 13.437ZM11.8032 15.3835C11.8032 15.1283 11.9045 14.8835 12.0865 14.7027L16.5558 10.2527C16.9327 9.87706 17.5417 9.87834 17.916 10.2553C18.2904 10.6322 18.2904 11.2399 17.9135 11.6142L14.1276 15.3835L17.9135 19.1527C18.2904 19.5271 18.2904 20.136 17.916 20.513C17.5417 20.8886 16.9327 20.8899 16.5558 20.5155L12.0865 16.0642C11.9045 15.8848 11.8032 15.6399 11.8032 15.3835Z" fill="#4F4F4F" />
+            <path fillRule="evenodd" clipRule="nevenodd" d="M28.0599 13.437C28.1573 14.0755 28.2061 14.7306 28.2061 15.3845C28.2061 22.4537 22.4548 28.205 15.3855 28.205C8.31631 28.205 2.56503 22.4537 2.56503 15.3845C2.56503 8.31525 8.31631 2.56396 15.3855 2.56396C19.3958 2.56396 23.0996 4.38832 25.5484 7.56653C25.8625 7.97422 25.7855 8.5614 25.3791 8.87422C24.9714 9.18961 24.3868 9.1114 24.0702 8.70499C21.9791 5.98576 18.8125 4.42807 15.3855 4.42807C9.34451 4.42807 4.42913 9.34217 4.42913 15.3845C4.42913 21.4255 9.34451 26.3396 15.3855 26.3396C21.4266 26.3396 26.342 21.4255 26.342 15.3845C26.342 14.8242 26.2996 14.264 26.2163 13.7191C26.1394 13.2114 26.4881 12.7358 26.9971 12.6576C27.5086 12.5729 27.9817 12.9281 28.0599 13.437ZM11.8032 15.3835C11.8032 15.1283 11.9045 14.8835 12.0865 14.7027L16.5558 10.2527C16.9327 9.87706 17.5417 9.87834 17.916 10.2553C18.2904 10.6322 18.2904 11.2399 17.9135 11.6142L14.1276 15.3835L17.9135 19.1527C18.2904 19.5271 18.2904 20.136 17.916 20.513C17.5417 20.8886 16.9327 20.8899 16.5558 20.5155L12.0865 16.0642C11.9045 15.8848 11.8032 15.6399 11.8032 15.3835Z" fill="#4F4F4F" />
           </S.PrevButton>
 
           {data.map(((item, i) => (

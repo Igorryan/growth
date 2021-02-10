@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { Entrances, Exits } from '../../../styles/animations'
 
 interface SliderProps {
   active?: boolean;
@@ -6,6 +7,11 @@ interface SliderProps {
 
 interface OptionsProps {
   isLink?: boolean
+  animation: string
+}
+
+interface AnimationProps {
+  animation: string
 }
 
 export const Wrapper = styled.main`
@@ -62,7 +68,7 @@ export const Title = styled.h1`
   }
 `
 
-export const Logo = styled.img`
+export const Logo = styled.img<AnimationProps>`
   width: max-content;
   height: 80px;
   
@@ -70,13 +76,30 @@ export const Logo = styled.img`
   object-position: 0 0;
   
   margin-bottom: 25px;
+
+  ${props => props.animation === 'in' && css`
+    ${Entrances.flip_in_hor_bottom}
+  `}
+
+  ${props => props.animation === 'out' && css`
+    ${Exits.flip_out_hor_bottom}
+  `}
+  
 `
 
-export const Description = styled.p`
+export const Description = styled.p<AnimationProps>`
   width: 482px;
   font-size: 14px;
 
   margin-bottom: 34px;
+
+  ${props => props.animation === 'in' && css`
+    ${Entrances.flip_in_hor_bottom}
+  `}
+
+  ${props => props.animation === 'out' && css`
+    ${Exits.flip_out_hor_bottom}
+  `}
 
   @media (max-width: 580px){
     width: 86%;
@@ -122,6 +145,10 @@ export const Option = styled.li<OptionsProps>`
       color: #fff;
       cursor: pointer;
     }
+  `}
+
+  ${props => props.animation === 'in' && css`
+    ${Entrances.scale_in_center}
   `}
 `
 

@@ -67,6 +67,68 @@ export const slide_in_blurred_bottom = css`
     }
   `} 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 `
+export const roll_in_blurred_left = css`
+  animation: ${keyframes`
+    0% {
+      transform: translateX(-1000px) rotate(-720deg);
+      filter: blur(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0) rotate(0deg);
+      filter: blur(0);
+      opacity: 1;
+    }
+  `} 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+`
+export const scale_in_center = css`
+  animation: ${keyframes`
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  `} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+`
+export const scale_in_hor_center = css`
+  animation: ${keyframes`
+    0% {
+      transform: scaleX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  `} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+`
+export const flip_in_diag_2_br = css`
+  animation: ${keyframes`
+  0% {
+    transform: rotate3d(-1, 1, 0, -80deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate3d(1, 1, 0, 0deg);
+    opacity: 1;
+  }
+  `} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+`
+export const flip_in_hor_bottom = css`
+  animation: ${keyframes`
+  0% {
+    transform: rotateX(80deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+  `} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+`
 export const flip_in_ver_right = css`
   animation: ${keyframes`
     0% {
@@ -79,6 +141,8 @@ export const flip_in_ver_right = css`
     }
   `} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 `
+
+
 
 // Exits
 export const swing_out_top_bck = css`
@@ -135,6 +199,18 @@ export const slide_out_blurred_bottom = css`
     }
   `} 0.45s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
 `
+export const flip_out_hor_bottom = css`
+  animation: ${keyframes`
+    0% {
+      transform: rotateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: rotateX(-70deg);
+      opacity: 0;
+    }
+  `} 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+`
 
 // Text
 export const swirl_in_top_fwd = css`
@@ -188,14 +264,20 @@ export const Entrances = {
   fade_in_bck,
   slide_in_bottom,
   slide_in_blurred_bottom,
-  flip_in_ver_right
+  roll_in_blurred_left,
+  scale_in_center,
+  scale_in_hor_center,
+  flip_in_ver_right,
+  flip_in_hor_bottom,
+  flip_in_diag_2_br
 }
 
 export const Exits = {
   swing_out_top_bck,
   fade_out_bck,
   slide_out_bottom,
-  slide_out_blurred_bottom
+  slide_out_blurred_bottom,
+  flip_out_hor_bottom
 }
 
 export const Text = {
