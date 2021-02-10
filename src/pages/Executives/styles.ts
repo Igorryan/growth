@@ -134,12 +134,19 @@ export const Ocuppation = styled.span`
 
   font-size: 14px;
   margin-bottom: 26px;
+  text-align: center;
+  line-height: 20px;
+
+  width: 70%;
+  min-height: 40px;
 `
 
 export const LinkWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  margin-top: -8px;
 `
 
 export const LinkedinIcon = styled.svg`
