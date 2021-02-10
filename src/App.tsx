@@ -8,11 +8,10 @@ import BackgroundImage from './components/BackgroundImage';
 
 const App: React.FC = () => (
   <BrowserRouter>
-    <BackgroundImage>
+      <BackgroundImage />
       <GlobalStyle />
       <Routes />
       <NavigationMenu />
-    </BackgroundImage>
   </BrowserRouter>)
 
 export default App;

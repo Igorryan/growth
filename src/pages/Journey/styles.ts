@@ -1,14 +1,12 @@
 import styled from 'styled-components'
 
-import BackgroundImage from '../../assets/img/background-journey.png';
 import LayoutBase from '../../components/LayoutBase';
 
 export const Wrapper = styled(LayoutBase)`
-  background-image: url(${BackgroundImage});
   background-position-y: -500px;
   background-position-x: -720px;
 
-  background-color: #000;
+  background-color: transparent;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

@@ -105,6 +105,32 @@ export const scale_in_hor_center = css`
     }
   `} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 `
+export const scale_in_hor_left = css`
+  animation: ${keyframes`
+  0% {
+    transform: scaleX(0);
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  `} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+`
+export const scale_in_ver_center = css`
+  animation: ${keyframes`
+  0% {
+    transform: scaleY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  `} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+`
 export const flip_in_diag_2_br = css`
   animation: ${keyframes`
   0% {
@@ -140,6 +166,30 @@ export const flip_in_ver_right = css`
       opacity: 1;
     }
   `} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+`
+export const swirl_in_bck = css`
+  animation: ${keyframes`
+  0% {
+    transform: rotate(540deg) scale(5);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+  `} 0.65s ease-out both;
+`
+export const swirl_in_fwd = css`
+  animation: ${keyframes`
+  0% {
+    transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+  `} 0.6s ease-out both;
 `
 
 
@@ -211,6 +261,42 @@ export const flip_out_hor_bottom = css`
     }
   `} 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 `
+export const rotate_out_center = css`
+  animation: ${keyframes`
+  0% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+  `} 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+`
+export const swirl_out_fwd = css`
+  animation: ${keyframes`
+  0% {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(540deg) scale(5);
+    opacity: 0;
+  }
+  `} 0.65s ease-in both;
+`
+export const scale_out_vertical = css`
+  animation: ${keyframes`
+  0% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    opacity: 1;
+  }
+  `} 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+`
 
 // Text
 export const swirl_in_top_fwd = css`
@@ -267,9 +353,13 @@ export const Entrances = {
   roll_in_blurred_left,
   scale_in_center,
   scale_in_hor_center,
+  scale_in_hor_left,
+  scale_in_ver_center,
   flip_in_ver_right,
   flip_in_hor_bottom,
-  flip_in_diag_2_br
+  flip_in_diag_2_br,
+  swirl_in_bck,
+  swirl_in_fwd
 }
 
 export const Exits = {
@@ -277,7 +367,10 @@ export const Exits = {
   fade_out_bck,
   slide_out_bottom,
   slide_out_blurred_bottom,
-  flip_out_hor_bottom
+  flip_out_hor_bottom,
+  rotate_out_center,
+  swirl_out_fwd,
+  scale_out_vertical
 }
 
 export const Text = {
