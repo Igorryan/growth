@@ -52,8 +52,8 @@ const Executives: React.FC = () => (
     <S.ContentWrapper>
       <S.Title>Executivos</S.Title>
       <S.ExecutivesWrapper>
-        {data.map(({ image, name, occupation, linkedin }) => (
-          <S.Executive key={name}>
+        {data.map(({ image, name, occupation, linkedin }, i) => (
+          <S.Executive style={{animationDelay: `${i * 0.2}s`}} key={i}>
             <S.ProfileImage style={{backgroundImage: `url(${image})`}} />
 
             <S.Name>{name}</S.Name>

@@ -67,6 +67,18 @@ export const slide_in_blurred_bottom = css`
     }
   `} 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 `
+export const flip_in_ver_right = css`
+  animation: ${keyframes`
+    0% {
+      transform: rotateY(-80deg);
+      opacity: 0;
+    }
+    100% {
+      transform: rotateY(0);
+      opacity: 1;
+    }
+  `} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+`
 
 // Exits
 export const swing_out_top_bck = css`
@@ -175,7 +187,8 @@ export const Entrances = {
   fade_in_bottom,
   fade_in_bck,
   slide_in_bottom,
-  slide_in_blurred_bottom
+  slide_in_blurred_bottom,
+  flip_in_ver_right
 }
 
 export const Exits = {

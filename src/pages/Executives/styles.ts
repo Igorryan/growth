@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Entrances} from '../../styles/animations'
 
 import LayoutBase from '../../components/LayoutBase';
 import ArrowMinIcon from '../../assets/icons/arrow-min.svg'
@@ -81,6 +82,8 @@ export const Executive = styled.div`
 
   border: 1px solid #414141;
   border-radius: 6px;
+
+  ${Entrances.flip_in_ver_right}
 
   @media (max-width: 1150px){
     width: 100%;
