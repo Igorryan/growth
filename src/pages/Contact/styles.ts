@@ -5,8 +5,6 @@ import { Entrances } from '../../styles/animations';
 
 export const Wrapper = styled(LayoutBase)`
   background-color: #000;
-  overflow-y: hidden;
-
   ${Entrances.fade_in_bck}
 
 `
@@ -20,8 +18,6 @@ export const ContentWrapper = styled.section`
   padding-top: 60px;
   padding-bottom: 60px;
   padding-left: 115px;
-
-  ${Entrances.fade_in_bottom}
 
   @media (max-width: 1200px){
     padding-left: 35px;

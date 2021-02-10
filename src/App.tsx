@@ -7,9 +7,9 @@ import NavigationMenu from './components/NavigationMenu';
 
 const App: React.FC = () => (
   <BrowserRouter>
-      <GlobalStyle />
-      <Routes />
-      <NavigationMenu />
+    <GlobalStyle />
+    <Routes />
+    <NavigationMenu />
   </BrowserRouter>)
 
 export default App;
