@@ -76,6 +76,7 @@ const Slider: React.FC = () => {
         }, i * 65)
       })
     }, (writtenTitle.length * timeToDeleteCaracter) + delayToWritten)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[title])
 
   const handleChange = useCallback((toIndex: number) => {
