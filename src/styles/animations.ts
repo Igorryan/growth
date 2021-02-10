@@ -27,6 +27,102 @@ export const fade_in_bck = css`
     }
   `} 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 `
+export const fade_in_bottom = css`
+  animation: ${keyframes`
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  `} 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+`
+export const slide_in_bottom = css`
+  animation: ${keyframes`
+    0% {
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  `} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+`
+export const slide_in_blurred_bottom = css`
+  animation: ${keyframes`
+    0% {
+      transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+      transform-origin: 50% 100%;
+      filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scaleY(1) scaleX(1);
+      transform-origin: 50% 50%;
+      filter: blur(0);
+      opacity: 1;
+    }
+  `} 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+`
+
+// Exits
+export const swing_out_top_bck = css`
+  animation: ${keyframes`
+    0% {
+      transform: rotateX(0deg);
+      transform-origin: top;
+      opacity: 1;
+    }
+    100% {
+      transform: rotateX(-100deg);
+      transform-origin: top;
+      opacity: 0;
+    }
+  `} 0.45s cubic-bezier(0.6, -0.28, 0.735, 0.045) both;
+`
+export const fade_out_bck = css`
+  animation: ${keyframes`
+    0% {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateZ(-80px);
+      opacity: 0;
+    }
+  `} 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+`
+export const slide_out_bottom = css`
+  animation: ${keyframes`
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+  `} 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+`
+export const slide_out_blurred_bottom = css`
+  animation: ${keyframes`
+    0% {
+      transform: translateY(0) scaleY(1) scaleX(1);
+      transform-origin: 50% 50%;
+      filter: blur(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(1000px) scaleY(2) scaleX(0.2);
+      transform-origin: 50% 100%;
+      filter: blur(40px);
+      opacity: 0;
+    }
+  `} 0.45s cubic-bezier(0.755, 0.050, 0.855, 0.060) both;
+`
 
 // Text
 export const swirl_in_top_fwd = css`
@@ -73,39 +169,20 @@ export const focus_in_contract = css`
 `} 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 `
 
-// Exits
-export const swing_out_top_bck = css`
-  animation: ${keyframes`
-    0% {
-      transform: rotateX(0deg);
-      transform-origin: top;
-      opacity: 1;
-    }
-    100% {
-      transform: rotateX(-100deg);
-      transform-origin: top;
-      opacity: 0;
-    }
-  `} 0.45s cubic-bezier(0.6, -0.28, 0.735, 0.045) both;
-`
-export const fade_out_bck = css`
-  animation: ${keyframes`
-    0% {
-      transform: translateZ(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateZ(-80px);
-      opacity: 0;
-    }
-  `} 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-`
-
 // Declarations
-
 export const Entrances = {
   swing_in_top_fwd,
-  fade_in_bck
+  fade_in_bottom,
+  fade_in_bck,
+  slide_in_bottom,
+  slide_in_blurred_bottom
+}
+
+export const Exits = {
+  swing_out_top_bck,
+  fade_out_bck,
+  slide_out_bottom,
+  slide_out_blurred_bottom
 }
 
 export const Text = {
@@ -114,15 +191,10 @@ export const Text = {
   focus_in_contract
 }
 
-export const Exits = {
-  swing_out_top_bck,
-  fade_out_bck
-}
-
 const Animations = {
   Entrances,
-  Text,
-  Exits
+  Exits,
+  Text
 }
 
 export default Animations;

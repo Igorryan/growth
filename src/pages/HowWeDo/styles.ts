@@ -9,6 +9,7 @@ export const Wrapper = styled(LayoutBase)`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
+  overflow-y: hidden;
 
   @media (max-width: 1200px){
     background-position: right;
@@ -18,6 +19,8 @@ export const Wrapper = styled(LayoutBase)`
 export const ContentWrapper = styled.div`
   display: flex;
   align-items: flex-end;
+  overflow-y: hidden;
+
 
   height: 100vh;
   margin-left: 120px;

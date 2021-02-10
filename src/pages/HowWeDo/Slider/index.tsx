@@ -31,7 +31,10 @@ const data = [
 
 const SliderHowWeDo: React.FC = () => {
   const [currentItem, setCurrentItem] = useState(data[0])
+  const [sliderAnimation, setSliderAnimation] = useState('in')
+  const [textAnimation, setTextAnimation] = useState('in')
   const history = useHistory();
+
 
   const handleChange = useCallback((toIndex: number) => {
     const item = data.find(d => d.id === toIndex);
@@ -40,20 +43,27 @@ const SliderHowWeDo: React.FC = () => {
       return;
     }
 
-    setCurrentItem(item)
+    setSliderAnimation('out')
+
+    setTimeout(() => {
+      setTextAnimation('out')
+      setCurrentItem(item)
+      setSliderAnimation('in')
+      setTimeout(() => {setTextAnimation('in')}, 600)
+    }, 600)
   }, [])
 
   return (
-    <S.Wrapper>
+    <S.Wrapper animation={sliderAnimation}>
       {currentItem.titleImage && <S.TitleImage src={currentItem.titleImage} />}
 
-      {currentItem.sobtitle && <S.Sobtitle>{currentItem.sobtitle}</S.Sobtitle>}
+      {currentItem.sobtitle && <S.Sobtitle animation={textAnimation}>{currentItem.sobtitle}</S.Sobtitle>}
 
-      <S.Title>{currentItem.title}</S.Title>
+      <S.Title animation={textAnimation}>{currentItem.title}</S.Title>
 
-      <S.Description>{currentItem.description}</S.Description>
+      <S.Description animation={textAnimation}>{currentItem.description}</S.Description>
 
-      {currentItem.buttonText && <S.Button onClick={() => {history.push('/contact')}}>{currentItem.buttonText}</S.Button>}
+      {currentItem.buttonText && <S.Button animation={textAnimation} onClick={() => {history.push('/contact')}}>{currentItem.buttonText}</S.Button>}
   
       <S.NavigationBar>
         <S.PrevButton onClick={() => handleChange(currentItem.id-1)} active={currentItem.id !== 1} width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">

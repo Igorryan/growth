@@ -1,10 +1,15 @@
 import styled, { css } from 'styled-components'
+import {Entrances, Exits} from '../../../styles/animations'
 
 interface SliderProps {
   active?: boolean;
 }
 
-export const Wrapper = styled.main`
+interface AnimationProps {
+  animation: string
+}
+
+export const Wrapper = styled.main<AnimationProps>`
   position: relative;
   
   display: flex;
@@ -25,6 +30,14 @@ export const Wrapper = styled.main`
   > svg {
     position: absolute;
   }
+
+  ${props => props.animation === 'in' && css`
+    ${Entrances.slide_in_bottom}
+  `}
+
+  ${props => props.animation === 'out' && css`
+    ${Exits.slide_out_bottom}
+  `}
 
   > svg:nth-of-type(1) {
     top: 20px;
@@ -71,18 +84,24 @@ export const TitleImage = styled.img`
   }
 `
 
-export const Sobtitle = styled.strong`
+export const Sobtitle = styled.strong<AnimationProps>`
   margin-bottom: 10px;
 
   overflow: visible;
   text-transform: uppercase;
+
+  opacity: 0;
+
+  ${props => props.animation === 'in' && css`
+    ${Entrances.fade_in_bottom}
+  `}
 
   @media (max-width: 450px){
     font-size: 14px;
   }
 `
 
-export const Title = styled.h1`
+export const Title = styled.h1<AnimationProps>`
   position: relative;
 
   color: #70EAA6;
@@ -94,18 +113,32 @@ export const Title = styled.h1`
 
   overflow: visible;
 
+  opacity: 0;
+
+  ${props => props.animation === 'in' && css`
+    ${Entrances.fade_in_bottom}
+    animation-delay: 0.2s;
+  `}
+
   @media (max-width: 450px){
     font-size: 32px;
   }
 `
 
-export const Description = styled.p`
+export const Description = styled.p<AnimationProps>`
   margin-top: 12px;
   text-align:justify;
 
   color: #B1B1B1;
   font-size: 14px;
   line-height: 24px;
+
+  opacity: 0;
+
+  ${props => props.animation === 'in' && css`
+    ${Entrances.fade_in_bottom}
+    animation-delay: 0.4s;
+  `}
 
   @media (max-width: 450px){
     margin-top: 6px;
@@ -114,12 +147,19 @@ export const Description = styled.p`
   }
 `
 
-export const Button = styled.button`
+export const Button = styled.button<AnimationProps>`
   background: #70EAA6;
   padding: 16px 40px;
   border: none;
   border-radius: 100px;
   margin-top: 40px;
+
+  opacity: 0;
+
+  ${props => props.animation === 'in' && css`
+    ${Entrances.fade_in_bottom}
+    animation-delay: .6s;
+  `}
 
   @media (max-width: 450px){
     padding: 12px 20px;
