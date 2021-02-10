@@ -12,6 +12,9 @@ export const Wrapper = styled(LayoutBase)`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  ${Entrances.fade_in_bck}
+
 `
 
 export const ContentWrapper = styled.section`

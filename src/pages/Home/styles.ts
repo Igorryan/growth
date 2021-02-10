@@ -16,7 +16,7 @@ export const Wrapper = styled(LayoutBase)`
 
   overflow-y: hidden;
   
-  ${Entrances.flip_in_hor_bottom}
+  ${Entrances.fade_in_bck}
 
 `
 

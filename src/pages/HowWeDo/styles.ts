@@ -13,7 +13,7 @@ export const Wrapper = styled(LayoutBase)`
 
   background-image: url(${BackgroundCorporate});
   
-  ${Entrances.flip_in_hor_bottom}
+  ${Entrances.fade_in_bck}
 
   @media (max-width: 1200px){
     background-position: right;

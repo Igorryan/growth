@@ -15,6 +15,7 @@ export const Wrapper = styled(LayoutBase)`
 
   background: url(${BackgroundPortfolio});
 
-  ${Entrances.flip_in_hor_bottom}
+  ${Entrances.fade_in_bck}
+
 
 `
