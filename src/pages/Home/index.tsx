@@ -4,7 +4,7 @@ import * as S from './styles';
 import Slider from './Slider';
 import Sculpture from '../../assets/img/sculpture.png';
 
-const Dashboard: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <S.Wrapper>
       <S.ContentWrapper>
@@ -15,4 +15,4 @@ const Dashboard: React.FC = () => {
   )
 }
 
-export default Dashboard;
+export default Home;
