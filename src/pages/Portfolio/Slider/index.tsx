@@ -49,8 +49,8 @@ const SliderCases: React.FC = () => {
     setTimeout(() => {
       setCurrentItem(item)
       setOptionsAnimation('in')
-      setLogoAnimation('in')
       setDescriptionAnimation('in')
+      setTimeout(() => setLogoAnimation('in'), 300)
     }, 600)
 
   }, [])

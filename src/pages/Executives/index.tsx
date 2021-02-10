@@ -36,7 +36,7 @@ const data = [
   {
     image: MatheusProfile,
     name: 'Matheus Barcelos',
-    occupation: 'Advogado',
+    occupation: 'Chief Legal Office',
     linkedin: 'matheusbarcelosmartins'
   },
   {
