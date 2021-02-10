@@ -9,7 +9,7 @@ const Journey: React.FC = () => {
   return (
     <S.Wrapper>
       <S.ContentWrapper>
-        <img src={Sculpture} alt=""/>
+        <img width={450} src={Sculpture} alt=""/>
         <SliderJourney />
       </S.ContentWrapper>
     </S.Wrapper>

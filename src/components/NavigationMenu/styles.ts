@@ -139,6 +139,8 @@ export const LogoSVG = styled.img`
   
   margin-bottom: 57px;
 
+  cursor: pointer;
+
   @media (max-width: 500px){
     width: 40px;
     height: 40px;
@@ -157,6 +159,8 @@ export const LogoSVG = styled.img`
 export const TitleSVG = styled.img`
   width: 130px;
   margin-bottom: 57px;
+
+  cursor: pointer;
 
   @media (max-width: 500px){
     margin-bottom: 30px;

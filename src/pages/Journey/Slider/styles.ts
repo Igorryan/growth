@@ -32,7 +32,7 @@ export const Title = styled.h1`
   margin-bottom: 34px;
 
   ${Text.focus_in_contract};
-  animation-duration: 0.2s;
+  animation-duration: 1.4s;
   animation-delay: 0.2s;
 
   overflow: visible;

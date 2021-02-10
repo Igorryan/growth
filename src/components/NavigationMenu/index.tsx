@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import * as S from './styles';
 
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 
 import ButtonBack from '../../assets/icons/arrow-back-in-container.svg';
 import Icon from '../../assets/icons/icon.svg';
@@ -48,6 +48,7 @@ const data = [
 
 const NavigationMenu: React.FC = () => {
   const location = useLocation().pathname;
+  const history = useHistory();
 
   const [menuVisible, setMenuVisible] = useState(true)
   const [showMenuActive, setShowMenuActive] = useState(true)
@@ -128,8 +129,8 @@ const NavigationMenu: React.FC = () => {
       </div>
 
       <S.OptionsListWrapper>
-        <S.LogoSVG src={Icon} />
-        <S.TitleSVG src={Logo} />
+        <S.LogoSVG onClick={() => history.push('/')} src={Icon} />
+        <S.TitleSVG onClick={() => history.push('/')} src={Logo} />
 
         <S.OptionsList>
           {data.map(({ id, route, name }) => (
