@@ -51,7 +51,7 @@ const SliderCases: React.FC = () => {
       setOptionsAnimation('in')
       setLogoAnimation('in')
       setDescriptionAnimation('in')
-    }, 200)
+    }, 600)
 
   }, [])
 
