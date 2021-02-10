@@ -5,6 +5,7 @@ import LayoutBase from '../../components/LayoutBase';
 import ArrowMinIcon from '../../assets/icons/arrow-min.svg'
 
 export const Wrapper = styled(LayoutBase)`
+  background-color: #191919;
   background-position-y: -500px;
   background-position-x: -720px;
 
