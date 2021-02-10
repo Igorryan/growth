@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import * as S from './styles';
 
+import clearAllTimeOuts from '../../../utils/clearAllTimeOuts'
+
 const data = [
   {
     id: 1,
@@ -39,13 +41,6 @@ const data = [
   },
   
 ]
-
-function clearAllTimeOuts() {
-  var timeOuts = window.setTimeout(function() {}, 0);
-  while (timeOuts--) {
-      window.clearTimeout(timeOuts); // will do nothing if no timeout with id is present
-  }
-}
 
 const Slider: React.FC = () => {
   const [title, setTitle] = useState(data[0].title)

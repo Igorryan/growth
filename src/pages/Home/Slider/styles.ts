@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
+import { Entrances, Exits } from '../../../styles/animations'
 
 interface SliderProps {
   active?: boolean;
@@ -11,33 +12,6 @@ interface AnimationProps {
 const Flashes = keyframes`
   0%, 100% {opacity: 0.8;}
   50% {opacity: 0}
-`
-
-const SwingOutTopBck = keyframes`
-  0% {
-    transform: rotateX(0deg);
-    transform-origin: top;
-    opacity: 1;
-  }
-  100% {
-    transform: rotateX(-100deg);
-    transform-origin: top;
-    opacity: 0;
-  }
-}
-`
-const SwingInTopFwd = keyframes`
-  0% {
-    transform: rotateX(-100deg);
-    transform-origin: top;
-    opacity: 0;
-  }
-  100% {
-    transform: rotateX(0deg);
-    transform-origin: top;
-    opacity: 1;
-  }
-}
 `
 
 export const Wrapper = styled.main`
@@ -139,11 +113,11 @@ export const Description = styled.p<AnimationProps>`
   }
 
   ${props => props.animation === 'in' && css`
-    animation: ${SwingInTopFwd} 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+    ${Entrances.swing_in_top_fwd};
   `}
 
   ${props => props.animation === 'out' && css`
-    animation: ${SwingOutTopBck} 0.45s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+    ${Exits.swing_out_top_bck};
   `}
 `
 
