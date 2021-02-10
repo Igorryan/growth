@@ -8,7 +8,7 @@ const Home: React.FC = () => {
   return (
     <S.Wrapper>
       <S.ContentWrapper>
-        <img src={Sculpture} alt=""/>
+        <img width={450} src={Sculpture} alt=""/>
         <Slider />
       </S.ContentWrapper>
     </S.Wrapper>
