@@ -41,6 +41,7 @@ export const ContentWrapper = styled.section`
 
 export const MotionDoneWrapper = styled.div`
   z-index: 100;
+  margin-top: -100px;
 
   width: 100%;
   margin: 0 auto;

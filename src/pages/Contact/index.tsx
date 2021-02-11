@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
   const [formErrors, updateFormErrors] = useState<FormErrors>({})
 
   const refMotionDoneWrapper = useRef<HTMLDivElement>(null);
-  const [animationStart, setAnimationStart] = useState(true);
+  const [animationStart, setAnimationStart] = useState(false);
 
   useEffect(() => {
     animationStart && refMotionDoneWrapper.current &&
