@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
         animationData: animationData,
         loop: false,
       }).addEventListener('complete', () => {
-        // setTimeout(() => {history.push('/')}, 1000)
+        setTimeout(() => {history.push('/')}, 1000)
       })
   }, [animationStart, history])
 
