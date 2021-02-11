@@ -25,6 +25,7 @@ export const ContentWrapper = styled.section`
   padding-top: 60px;
   padding-bottom: 60px;
   padding-left: 115px;
+  overflow: visible;
 
   width: max-content;
 
@@ -41,13 +42,13 @@ export const ContentWrapper = styled.section`
 export const MotionDoneWrapper = styled.div`
   z-index: 100;
 
-
   width: 400px;
+  position: absolute;
   margin: 0 auto;
 `
 
 export const Title = styled.h1`
-  line-height: 10px;
+  line-height: 30px;
   overflow: visible;
 
   font-size: 43px;
@@ -67,7 +68,7 @@ export const Title = styled.h1`
 
 export const Description = styled.p`
   color: #B7B7B7;
-
+  margin-top: -12px;
   line-height: 26px;
 
   span {

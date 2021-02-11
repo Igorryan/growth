@@ -6,6 +6,7 @@ import getValidationErrors from '../../utils/getValidationErrors';
 
 import lottie from 'lottie-web'
 import animationData from '../../assets/animations/done.json'
+import { useHistory } from 'react-router-dom';
 
 const initialFormData = Object.freeze({
   nome: "",
@@ -26,6 +27,8 @@ interface FormErrors {
 }
 
 const Contact: React.FC = () => {
+  const history = useHistory();
+
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, updateFormData] = useState(initialFormData);
   const [formErrors, updateFormErrors] = useState<FormErrors>({})
@@ -39,8 +42,10 @@ const Contact: React.FC = () => {
         container: refMotionDoneWrapper.current,
         animationData: animationData,
         loop: false,
+      }).addEventListener('complete', () => {
+        setTimeout(() => {history.push('/')}, 1000)
       })
-  }, [animationStart])
+  }, [animationStart, history])
 
   const handleSubmit = useCallback(async (e) => {
     try{
