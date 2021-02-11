@@ -10,23 +10,40 @@ interface InputProps{
 
 export const Wrapper = styled(LayoutBase)`
   background-color: #000;
+  overflow: hidden;
   ${Entrances.fade_in_bck}
-
 `
 
 export const ContentWrapper = styled.section`
+  position: relative;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-height: 100vh;
 
+  min-height: 100vh;
   padding-top: 60px;
   padding-bottom: 60px;
   padding-left: 115px;
 
+  width: max-content;
+
   @media (max-width: 1200px){
     padding-left: 35px;
   }
+
+  @media (max-width: 660px){
+    padding: 70px 35px 30px;
+    width: 100%;
+  }
+`
+
+export const MotionDoneWrapper = styled.div`
+  z-index: 100;
+
+
+  width: 400px;
+  margin: 0 auto;
 `
 
 export const Title = styled.h1`
@@ -70,10 +87,14 @@ export const Form = styled.form`
   overflow: visible;
   margin-top: 40px;
 
+  width: max-content;
+
   @media (max-width: 660px){
     flex-direction: column;
     width: 100%;
+    margin-right: 0;
   }
+
 `
 
 export const InputsColumns = styled.div`
@@ -112,7 +133,7 @@ export const InputWrapper = styled.div<InputProps>`
   }
 
   @media (max-width: 660px){
-    width: 92%;
+    width: 100%;
   }
 
   textarea {

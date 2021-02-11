@@ -1,8 +1,11 @@
-import React, { ChangeEvent, useCallback, useRef, useState } from 'react';
+import React, { ChangeEvent, useCallback, useEffect, useRef, useState } from 'react';
 import * as S from './styles';
 
 import * as Yup from 'yup'
 import getValidationErrors from '../../utils/getValidationErrors';
+
+import lottie from 'lottie-web'
+import animationData from '../../assets/animations/done.json'
 
 const initialFormData = Object.freeze({
   nome: "",
@@ -27,6 +30,18 @@ const Contact: React.FC = () => {
   const [formData, updateFormData] = useState(initialFormData);
   const [formErrors, updateFormErrors] = useState<FormErrors>({})
 
+  const refMotionDoneWrapper = useRef<HTMLDivElement>(null);
+  const [animationStart, setAnimationStart] = useState(false);
+
+  useEffect(() => {
+    animationStart && refMotionDoneWrapper.current &&
+      lottie.loadAnimation({
+        container: refMotionDoneWrapper.current,
+        animationData: animationData,
+        loop: false,
+      })
+  }, [animationStart])
+
   const handleSubmit = useCallback(async (e) => {
     try{
       e.preventDefault()
@@ -45,6 +60,8 @@ const Contact: React.FC = () => {
       });
 
       updateFormErrors({})
+
+      setAnimationStart(true);
   
       //Enviar e-mail
     }catch(err){
@@ -71,11 +88,14 @@ const Contact: React.FC = () => {
   return (
     <S.Wrapper>
       <S.ContentWrapper>
+        <S.MotionDoneWrapper ref={refMotionDoneWrapper} />
+        <div style={{display: `${animationStart ? 'none' : 'flex'}`, flexDirection: 'column'}}>
         <S.Title>Vamos conversar?</S.Title>
         <S.Description>Você também pode nos encontrar nos seguintes canais:</S.Description>
         <S.Description style={{marginTop: 20}}><span>Email: contato@growth.sale <br/> Telefone: +55 27 99691-3309</span></S.Description>
-  
+
         <S.Form ref={formRef} action="" onSubmit={handleSubmit}>
+
           <S.InputsColumns>
             <S.InputWrapper error={!!formErrors.nome}>
               <span>Name*</span>
@@ -112,6 +132,7 @@ const Contact: React.FC = () => {
             <S.Button>Envie e voe</S.Button>
           </S.InputsColumns>
         </S.Form>
+        </div>
       </S.ContentWrapper>
     </S.Wrapper>
   )
