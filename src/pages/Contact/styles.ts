@@ -198,26 +198,3 @@ export const InputWrapper = styled.div<InputProps>`
 export const Input = styled(InputMask)`
 
 `
-
-export const Button = styled.button`
-  float: right;
-  margin-top: 16px;
-  
-  background: #70EAA6;
-  border:none;
-  padding: 10px 40px;
-  border-radius: 100px;
-
-  transition: all 0.4s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  @media (max-width: 660px){
-    float: none;
-    width: 92%;
-    margin: 0 auto;
-  }
-`
-

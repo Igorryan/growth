@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import {Entrances, Exits} from '../../../styles/animations'
+import Button from '../../../components/Button'
 
 interface SliderProps {
   active?: boolean;
@@ -147,23 +148,14 @@ export const Description = styled.p<AnimationProps>`
   }
 `
 
-export const Button = styled.button<AnimationProps>`
-  background: #70EAA6;
-  padding: 16px 40px;
-  border: none;
-  border-radius: 100px;
+export const ButtonSlider = styled(Button)<AnimationProps>`
   margin-top: 40px;
-
   opacity: 0;
 
   ${props => props.animation === 'in' && css`
     ${Entrances.fade_in_bottom}
     animation-delay: .6s;
   `}
-
-  @media (max-width: 450px){
-    padding: 12px 20px;
-  }
 `
 
 export const NavigationBar = styled.div`

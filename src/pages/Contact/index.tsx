@@ -7,6 +7,7 @@ import getValidationErrors from '../../utils/getValidationErrors';
 import lottie from 'lottie-web'
 import animationData from '../../assets/animations/done.json'
 import { useHistory } from 'react-router-dom';
+import Button from '../../components/Button';
 
 const initialFormData = Object.freeze({
   nome: "",
@@ -134,7 +135,7 @@ const Contact: React.FC = () => {
               <textarea name="mensagem" onChange={handleChange} placeholder="Capriche na mensagem..." />
             </S.InputWrapper>
   
-            <S.Button>Envie e voe</S.Button>
+            <Button>Envie e voe</Button>
           </S.InputsColumns>
         </S.Form>
         </div>

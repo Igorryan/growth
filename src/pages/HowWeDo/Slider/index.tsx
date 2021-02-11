@@ -63,7 +63,7 @@ const SliderHowWeDo: React.FC = () => {
 
       <S.Description animation={textAnimation}>{currentItem.description}</S.Description>
 
-      {currentItem.buttonText && <S.Button animation={textAnimation} onClick={() => {history.push('/contact')}}>{currentItem.buttonText}</S.Button>}
+      {currentItem.buttonText && <S.ButtonSlider animation={textAnimation} onClick={() => {history.push('/contact')}}>{currentItem.buttonText}</S.ButtonSlider>}
   
       <S.NavigationBar>
         <S.PrevButton onClick={() => handleChange(currentItem.id-1)} active={currentItem.id !== 1} width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
