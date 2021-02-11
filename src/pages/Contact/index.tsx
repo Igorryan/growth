@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
   const [formErrors, updateFormErrors] = useState<FormErrors>({})
 
   const refMotionDoneWrapper = useRef<HTMLDivElement>(null);
-  const [animationStart, setAnimationStart] = useState(false);
+  const [animationStart, setAnimationStart] = useState(true);
 
   useEffect(() => {
     animationStart && refMotionDoneWrapper.current &&
@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
         animationData: animationData,
         loop: false,
       }).addEventListener('complete', () => {
-        setTimeout(() => {history.push('/')}, 1000)
+        // setTimeout(() => {history.push('/')}, 1000)
       })
   }, [animationStart, history])
 
