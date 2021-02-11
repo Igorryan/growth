@@ -9,7 +9,7 @@ interface InputProps{
 }
 
 export const Wrapper = styled(LayoutBase)`
-  background-color: #000;
+  background-color: #171717;
   overflow: hidden;
   ${Entrances.fade_in_bck}
 `
@@ -119,7 +119,7 @@ export const InputWrapper = styled.div<InputProps>`
 
   position: relative;
   overflow: visible;
-  background: #000;
+  background: #171717;
 
   & > span {
     position: absolute;
@@ -129,7 +129,7 @@ export const InputWrapper = styled.div<InputProps>`
 
     font-size: 14px;
 
-    background: #000;
+    background: #171717;
     padding: 0 10px;
   }
 
@@ -144,7 +144,7 @@ export const InputWrapper = styled.div<InputProps>`
   & > input, & > textarea {
     min-width: 260px;
     padding: 20px;
-    background: #000;
+    background: #171717;
     
     border: 1px solid rgba(255,255,255,.5);
     border-radius: 4px;

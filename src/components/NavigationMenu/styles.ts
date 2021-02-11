@@ -59,7 +59,7 @@ export const ButtonShowMenu = styled.div<MenuProps>`
   position: absolute;
   right: -50px;
 
-  background-color: #000;
+  background-color: #171717;
   padding-left: 14px;
 
   display: flex;
