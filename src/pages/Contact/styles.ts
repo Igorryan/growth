@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 import LayoutBase from '../../components/LayoutBase';
 import { Entrances } from '../../styles/animations';
+import InputMask from "react-input-mask";
 
 interface InputProps{
   error: boolean
@@ -114,7 +115,25 @@ export const InputWrapper = styled.div<InputProps>`
     width: 92%;
   }
 
+  textarea {
+    height: 146px;
+  }
+
   & > input, & > textarea {
+    min-width: 260px;
+    padding: 20px;
+    background: #000;
+    
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 4px;
+    
+    color: #fff;
+    
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: all 0.2s;
+
     &::placeholder {
       font-weight: normal;
     }
@@ -154,38 +173,8 @@ export const InputWrapper = styled.div<InputProps>`
   `}
 `
 
-export const Input = styled.input`
-    min-width: 260px;
-    padding: 20px;
-    background: #000;
-    
-    border: 1px solid rgba(255,255,255,.5);
-    border-radius: 4px;
-    
-    color: #fff;
-    
-    font-size: 14px;
-    font-weight: 700;
+export const Input = styled(InputMask)`
 
-    transition: all 0.2s;
-`
-
-export const Textarea = styled.textarea`
-    min-width: 260px;
-    height: 146px;
-
-    padding: 20px;
-    background: #000;
-    
-    border: 1px solid rgba(255,255,255,.5);
-    border-radius: 4px;
-    
-    color: #fff;
-    
-    font-size: 14px;
-    font-weight: 700;
-
-    transition: all 0.2s;
 `
 
 export const Button = styled.button`

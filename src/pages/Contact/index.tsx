@@ -34,10 +34,10 @@ const Contact: React.FC = () => {
       const schema = Yup.object().shape({
         nome: Yup.string().required(),
         sobrenome: Yup.string().required(),
-        email: Yup.string().email().required(),
+        email: Yup.string().email('Digite um e-mail válido').required('E-mail*'),
         empresa: Yup.string().required(),
         telefone: Yup.string().required(),
-        mensagem: Yup.string().required(),
+        mensagem: Yup.string().required('Como podemos te ajudar?'),
       })
   
       await schema.validate(formData, {
@@ -79,34 +79,34 @@ const Contact: React.FC = () => {
           <S.InputsColumns>
             <S.InputWrapper error={!!formErrors.nome}>
               <span>Name*</span>
-              <S.Input name="nome" onChange={handleChange}  placeholder="Manda seu nome, ai." type="text"/>
+              <input name="nome" onChange={handleChange}  placeholder="Manda seu nome, ai." type="text"/>
             </S.InputWrapper>
   
             <S.InputWrapper error={!!formErrors.sobrenome}>
               <span>Sobrenome*</span>
-              <S.Input name="sobrenome" onChange={handleChange} placeholder="Digite seu sobrenome" type="text"/>
+              <input name="sobrenome" onChange={handleChange} placeholder="Digite seu sobrenome" type="text"/>
             </S.InputWrapper>
   
             <S.InputWrapper error={!!formErrors.email}>
-              <span>E-mail*</span>
-              <S.Input name="email" onChange={handleChange} placeholder="Informe seu melhor e-mail" type="text" />
+              <span>{formErrors.email ? formErrors.email : 'E-mail*'}</span>
+              <input name="email" onChange={handleChange} placeholder="Informe seu melhor e-mail" type="text" />
             </S.InputWrapper>
   
             <S.InputWrapper error={!!formErrors.empresa}>
               <span>Empresa*</span>
-              <S.Input name="empresa" onChange={handleChange} placeholder="Escreve que a gente alavanca" type="text" />
+              <input name="empresa" onChange={handleChange} placeholder="Escreve que a gente alavanca" type="text" />
             </S.InputWrapper>
           </S.InputsColumns>
   
           <S.InputsColumns>
             <S.InputWrapper error={!!formErrors.telefone}>
               <span>Telefone*</span>
-              <S.Input name="telefone" onChange={handleChange} placeholder="(00) 9 9999-9999" type="text"/>
+              <S.Input mask="(99) 99999-9999" name="telefone" onChange={handleChange} placeholder="(00) 9 9999-9999" type="text"/>
             </S.InputWrapper>
   
             <S.InputWrapper error={!!formErrors.mensagem}>
-              <span>Mensagem*</span>
-              <S.Textarea name="mensagem" onChange={handleChange} placeholder="Capriche na mensagem..." />
+              <span>{formErrors.mensagem ? formErrors.mensagem : 'Mensagem*'}</span>
+              <textarea name="mensagem" onChange={handleChange} placeholder="Capriche na mensagem..." />
             </S.InputWrapper>
   
             <S.Button>Envie e voe</S.Button>
