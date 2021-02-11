@@ -1,7 +1,11 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import LayoutBase from '../../components/LayoutBase';
 import { Entrances } from '../../styles/animations';
+
+interface InputProps{
+  error: boolean
+}
 
 export const Wrapper = styled(LayoutBase)`
   background-color: #000;
@@ -86,7 +90,7 @@ export const InputsColumns = styled.div`
 
 `
 
-export const InputWrapper = styled.div`
+export const InputWrapper = styled.div<InputProps>`
   width: 260px;
   margin-bottom: 30px;
 
@@ -94,7 +98,7 @@ export const InputWrapper = styled.div`
   overflow: visible;
   background: #000;
 
-  span {
+  & > span {
     position: absolute;
 
     left: 16px;
@@ -106,25 +110,11 @@ export const InputWrapper = styled.div`
     padding: 0 10px;
   }
 
-  textarea {
-    height: 146px;
+  @media (max-width: 660px){
+    width: 92%;
   }
 
-  input, textarea {
-    min-width: 260px;
-    padding: 20px;
-    background: #000;
-    
-    border: 1px solid rgba(255,255,255,.5);
-    border-radius: 4px;
-    
-    color: #fff;
-    
-    font-size: 14px;
-    font-weight: 700;
-
-    transition: all 0.2s;
-
+  & > input, & > textarea {
     &::placeholder {
       font-weight: normal;
     }
@@ -143,15 +133,59 @@ export const InputWrapper = styled.div`
       -webkit-text-fill-color:#fff;
       -webkit-background-clip: text;
     }
-  }
 
-  @media (max-width: 660px){
-    width: 92%;
-
-    input, textarea {
+    @media (max-width: 660px){
       width: 100%;
     }
   }
+
+  ${props => props.error && css`
+    & > span {
+      color: #FF8585;
+    }
+
+    & > input, & > textarea {
+      border: 1px solid #FF8585;
+
+    &:focus {
+      border-color: #FF8585;
+    }
+    }
+  `}
+`
+
+export const Input = styled.input`
+    min-width: 260px;
+    padding: 20px;
+    background: #000;
+    
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 4px;
+    
+    color: #fff;
+    
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: all 0.2s;
+`
+
+export const Textarea = styled.textarea`
+    min-width: 260px;
+    height: 146px;
+
+    padding: 20px;
+    background: #000;
+    
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 4px;
+    
+    color: #fff;
+    
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: all 0.2s;
 `
 
 export const Button = styled.button`
