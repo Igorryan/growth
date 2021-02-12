@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
         animationData: animationData,
         loop: false,
       }).addEventListener('complete', () => {
-        setTimeout(() => {history.push('/')}, 1000)
+        setTimeout(() => {history.push('/')}, 2000)
       })
   }, [animationStart, history])
 
@@ -94,7 +94,11 @@ const Contact: React.FC = () => {
   return (
     <S.Wrapper>
       <S.ContentWrapper>
-        <S.MotionDoneWrapper ref={refMotionDoneWrapper} />
+        <S.ConfirmationWrapper>
+          <strong>Agradecemos o seu contato.<br/>Responderemos o quanto antes, fique de olho!</strong>
+          <S.MotionDoneWrapper ref={refMotionDoneWrapper} />
+        </S.ConfirmationWrapper>
+
         <div style={{display: `${animationStart ? 'none' : 'flex'}`, flexDirection: 'column'}}>
         <S.Title>Vamos conversar?</S.Title>
         <S.Description>Você também pode nos encontrar nos seguintes canais:</S.Description>

@@ -11,11 +11,12 @@ interface InputProps{
 export const Wrapper = styled(LayoutBase)`
   background-color: #171717;
   overflow: hidden;
-  ${Entrances.fade_in_bck}
+  ${Entrances.fade_in_bck};
 `
 
 export const ContentWrapper = styled.section`
   position: relative;
+  display: block;
 
   display: flex;
   justify-content: center;
@@ -27,7 +28,7 @@ export const ContentWrapper = styled.section`
   padding-left: 115px;
   overflow: visible;
 
-  width: max-content;
+  width: 680px;
 
   @media (max-width: 1200px){
     padding-left: 35px;
@@ -39,12 +40,29 @@ export const ContentWrapper = styled.section`
   }
 `
 
+export const ConfirmationWrapper = styled.div`
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  strong {
+    text-align: center;
+    line-height: 160%;
+    margin-bottom: -60px;
+    color: #EDF1F7;
+  }
+
+  @media (max-width: 660px){
+    margin-top: -100px;
+  }
+`
+
 export const MotionDoneWrapper = styled.div`
   z-index: 100;
-  margin-top: -100px;
-
-  width: 100%;
-  margin: 0 auto;
+  width: 400px;
 `
 
 export const Title = styled.h1`
