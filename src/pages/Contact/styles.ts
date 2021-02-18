@@ -54,10 +54,6 @@ export const ConfirmationWrapper = styled.div`
     margin-bottom: -60px;
     color: #EDF1F7;
   }
-
-  @media (max-width: 660px){
-    margin-top: -100px;
-  }
 `
 
 export const MotionDoneWrapper = styled.div`

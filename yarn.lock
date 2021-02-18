@@ -9728,6 +9728,11 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
+react-parallax-tilt@^1.4.85:
+  version "1.4.85"
+  resolved "https://registry.yarnpkg.com/react-parallax-tilt/-/react-parallax-tilt-1.4.85.tgz#f464df26bb67745ccf771faa0c9d89ef5002465f"
+  integrity sha512-ZR5xUyMDErn3/lsuxinMvsI3PkhPOuu88MzhJF6aCNYJy4SNDK2c6sVpdaX0J29qwnilL+wopy6li7Zq03AULw==
+
 react-refresh@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"

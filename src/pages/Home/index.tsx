@@ -2,13 +2,13 @@ import React from 'react';
 import * as S from './styles';
 
 import Slider from './Slider';
-import Sculpture from '../../assets/img/sculpture.png';
+import Sculpture from '../../components/Sculpture';
 
 const Home: React.FC = () => {
   return (
     <S.Wrapper>
       <S.ContentWrapper>
-        <img width={450} src={Sculpture} alt=""/>
+        <Sculpture />
         <Slider />
       </S.ContentWrapper>
     </S.Wrapper>
