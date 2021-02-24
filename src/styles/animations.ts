@@ -343,6 +343,22 @@ export const focus_in_contract = css`
 `} 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 `
 
+// Motions
+export const graviting = css`
+  animation: ${keyframes`
+  from {
+    -webkit-transform: translateY(-2rem);
+    -ms-transform: translateY(-2rem);
+    transform: translateY(-2rem);
+  }
+  to {
+    -webkit-transform: translateY(2rem);
+    -ms-transform: translateY(2rem);
+    transform: translateY(2rem);
+  }
+`} 7s ease-in-out infinite alternate;
+`
+
 // Declarations
 export const Entrances = {
   swing_in_top_fwd,
@@ -379,10 +395,15 @@ export const Text = {
   focus_in_contract
 }
 
+export const Motions = {
+  graviting
+}
+
 const Animations = {
   Entrances,
   Exits,
-  Text
+  Text,
+  Motions
 }
 
 export default Animations;
