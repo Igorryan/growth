@@ -96,36 +96,36 @@ export const BackgroundSVG = styled.svg`
 
 
   path:nth-of-type(1) {
-    animation: ${bottomToTop} 70s ease alternate infinite;
+    animation: ${bottomToTop} 45s ease alternate infinite;
   }
 
   path:nth-of-type(2) {
-    animation: ${topToBottom} 70s ease alternate infinite;
+    animation: ${topToBottom} 45s ease alternate infinite;
   }
   
   path:nth-of-type(3) {
-    animation: ${bottomToTop} 70s ease alternate infinite;
+    animation: ${bottomToTop} 45s ease alternate infinite;
   }
 
   path:nth-of-type(4) {
-    animation: ${leftToRight} 70s ease alternate infinite;
+    animation: ${leftToRight} 45s ease alternate infinite;
   }
 
   path:nth-of-type(5) {
-    animation: ${leftToRight} 70s ease alternate infinite; 
+    animation: ${leftToRight} 45s ease alternate infinite; 
   }
 
   path:nth-of-type(6) {
-    animation: ${bottomToTop2} 70s ease alternate infinite;
+    animation: ${bottomToTop2} 45s ease alternate infinite;
   }
   path:nth-of-type(7) {
-    animation: ${bottomToTop2} 70s ease alternate infinite;
+    animation: ${bottomToTop2} 45s ease alternate infinite;
   }
   path:nth-of-type(8) {
-    animation: ${bottomToTop2} 70s ease alternate infinite;
+    animation: ${bottomToTop2} 45s ease alternate infinite;
   }
   path:nth-of-type(9) {
-    animation: ${bottomToTop3} 70s ease alternate infinite;
+    animation: ${bottomToTop3} 45s ease alternate infinite;
   }
 
 

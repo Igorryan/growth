@@ -1,10 +1,8 @@
 import styled from 'styled-components'
-import { Entrances, Motions } from '../../styles/animations'
+import { Motions } from '../../styles/animations'
 
 export const Wrapper = styled.div`
   overflow: visible;
-  ${Entrances.fade_in_bck}
-  animation-duration: 1s;
   ${Motions.graviting}
 
   img {

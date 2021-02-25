@@ -356,7 +356,7 @@ export const graviting = css`
     -ms-transform: translateY(0.5rem);
     transform: translateY(0.5rem);
   }
-`} 4s ease-in-out infinite alternate;
+`} 3s ease-in-out infinite alternate;
 `
 
 // Declarations
