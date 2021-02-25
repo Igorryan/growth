@@ -2,6 +2,7 @@ import React, { ChangeEvent, useCallback, useEffect, useRef, useState } from 're
 import * as S from './styles';
 
 import * as Yup from 'yup'
+import {useNavigation} from '../../hooks/navigation'
 import getValidationErrors from '../../utils/getValidationErrors';
 
 import lottie from 'lottie-web'
@@ -29,6 +30,7 @@ interface FormErrors {
 
 const Contact: React.FC = () => {
   const history = useHistory();
+  const {changeBackground} = useNavigation()
 
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, updateFormData] = useState(initialFormData);
@@ -36,6 +38,10 @@ const Contact: React.FC = () => {
 
   const refMotionDoneWrapper = useRef<HTMLDivElement>(null);
   const [animationStart, setAnimationStart] = useState(false);
+
+  useEffect(() => {
+    changeBackground({background: ''})
+  }, [changeBackground])
 
   useEffect(() => {
     animationStart && refMotionDoneWrapper.current &&

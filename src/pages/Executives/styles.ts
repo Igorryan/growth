@@ -5,13 +5,9 @@ import LayoutBase from '../../components/LayoutBase';
 import ArrowMinIcon from '../../assets/icons/arrow-min.svg'
 
 export const Wrapper = styled(LayoutBase)`
-  background-color: #191919;
-  background-position-y: -500px;
-  background-position-x: -720px;
-
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-color: #171717;
+  overflow: hidden;
+  ${Entrances.fade_in_bck};
 `
 
 export const ContentWrapper = styled.section`

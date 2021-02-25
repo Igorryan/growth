@@ -1,5 +1,4 @@
 import styled, {css, keyframes} from 'styled-components'
-import {NavLink} from 'react-router-dom'
 
 import ArrowIllustration from '../../assets/illustrations/arrow.svg'
 
@@ -177,11 +176,12 @@ export const OptionsList = styled.ul`
   font-size: 14px;
 `
 
-export const Link = styled(NavLink)<MenuProps>`
+export const Link = styled.li<MenuProps>`
   text-decoration: none;
   color: #fff;
   margin-bottom: 20px;
   overflow: visible;
+  cursor: pointer;
 
   &::after {
     content: '';

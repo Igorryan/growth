@@ -1,15 +1,10 @@
 import styled from 'styled-components'
 
-import BackgroundHome from '../../assets/img/background-1.png'
 import LayoutBase from '../../components/LayoutBase';
 import { Entrances } from '../../styles/animations';
 
 export const Wrapper = styled(LayoutBase)`
   z-index: 0;
-  background-image: url(${BackgroundHome});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 
   width: 100vw;
   height: 100vh;

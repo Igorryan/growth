@@ -32,9 +32,9 @@ const NavigationMenu: React.FC = () => {
     })
 
     window.addEventListener('scroll', () => {
-      if(window.scrollY > 30){
+      if (window.scrollY > 30) {
         setShowMenuActive(false)
-      }else{
+      } else {
         setShowMenuActive(true)
       }
     })
@@ -44,14 +44,14 @@ const NavigationMenu: React.FC = () => {
         setMenuVisible(false)
         return false;
       }
-      
+
       setMenuVisible(true)
       return true;
     }
   }, [])
 
   const handleClickAsideComponent = useCallback((e) => {
-    if(!asideRef.current){
+    if (!asideRef.current) {
       return
     }
 
@@ -59,10 +59,10 @@ const NavigationMenu: React.FC = () => {
       return;
     }
 
-    if(window.innerWidth <= 1001){
+    if (window.innerWidth <= 1001) {
       setMenuVisible(false);
     }
-    
+
   }, [])
 
   useEffect(() => {
@@ -79,18 +79,19 @@ const NavigationMenu: React.FC = () => {
     currentPage && setLinkSelected(currentPage.id)
   }, [location])
 
-  const handleNavigate = useCallback((id) => {
+  const handleNavigate = useCallback(({ id, route }) => {
     setLinkSelected(id)
     window.scrollTo(0, 0);
-    if(window.innerWidth <= 1001){
+    if (window.innerWidth <= 1001) {
       setMenuVisible(false);
     }
-  }, [])
+    history.push(route)
+  }, [history])
 
   return (
     <S.Wrapper ref={asideRef} visible={menuVisible}>
       <S.ButtonShowMenu active={showMenuActive} onClick={() => setMenuVisible(!menuVisible)} visible={!menuVisible}>
-        <img src={MenuIcon} alt=""/>
+        <img src={MenuIcon} alt="" />
       </S.ButtonShowMenu>
 
       <div style={{ width: '100%' }}>
@@ -103,7 +104,7 @@ const NavigationMenu: React.FC = () => {
 
         <S.OptionsList>
           {data.map(({ id, route, name }) => (
-            <S.Link key={id} active={linkSelected === id} onClick={() => handleNavigate(id)} to={route}>{name}</S.Link>
+            <S.Link key={id} active={linkSelected === id} onClick={() => handleNavigate({ id, route })}>{name}</S.Link>
           ))}
         </S.OptionsList>
       </S.OptionsListWrapper>

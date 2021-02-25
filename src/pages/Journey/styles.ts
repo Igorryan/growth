@@ -1,20 +1,9 @@
 import styled from 'styled-components'
 
-import BackgroundJourney from '../../assets/img/background-journey.png';
 import LayoutBase from '../../components/LayoutBase';
 import { Entrances } from '../../styles/animations';
 
 export const Wrapper = styled(LayoutBase)`
-  background-position-y: -500px;
-  background-position-x: -720px;
-
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
-  background-image: url(${BackgroundJourney});
-
   overflow-y: hidden;
   
   ${Entrances.fade_in_bck}

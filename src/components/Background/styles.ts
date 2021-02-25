@@ -1,21 +1,20 @@
 import styled from 'styled-components'
 
-import BackgroundImage from '../../assets/img/background-1.png';
-
 export const Wrapper = styled.main`
-  z-index: 0;
-  background-image: url(${BackgroundImage});
+  /* background-position-y: -500px; */
+  /* background-position-x: -720px; */
+  background-color: transparent;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  background-position-y: -500px;
+  background-position: bottom;
 
-  position: fixed;
+  width: 100%;
+  height: 100vh;
 
-  width: 100vw;
-  height: 200vh;
+  position: absolute;
 
-  svg {
-    float: right;
-  }
+  z-index: -1;
+
+  transition: 0.8s ease;
 `
+
