@@ -347,16 +347,16 @@ export const focus_in_contract = css`
 export const graviting = css`
   animation: ${keyframes`
   from {
-    -webkit-transform: translateY(-2rem);
-    -ms-transform: translateY(-2rem);
-    transform: translateY(-2rem);
+    -webkit-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    transform: translateY(-1rem);
   }
   to {
-    -webkit-transform: translateY(2rem);
-    -ms-transform: translateY(2rem);
-    transform: translateY(2rem);
+    -webkit-transform: translateY(0.5rem);
+    -ms-transform: translateY(0.5rem);
+    transform: translateY(0.5rem);
   }
-`} 7s ease-in-out infinite alternate;
+`} 4s ease-in-out infinite alternate;
 `
 
 // Declarations

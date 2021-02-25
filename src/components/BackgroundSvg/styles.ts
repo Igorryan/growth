@@ -68,16 +68,16 @@ const bottomToTop3 = keyframes`
     transform: translate3d(0, 0, 0)
   }
 `
-const rightToLeft = keyframes`
+const leftToRight = keyframes`
   0% {
     stroke-width: 0;
     stroke-dasharray: 1 100;
-    transform: translate3d(600px, 0, 0)
+    transform: translate3d(-600px, 0, 0)
   }
   50% {
     stroke-width: 1.5;
     stroke-dasharray: 100 0;
-    transform: translate3d(-200px, 0, 0)
+    transform: translate3d(200px, 0, 0)
   }
   100% {
     stroke-width: 1.5;
@@ -96,36 +96,36 @@ export const BackgroundSVG = styled.svg`
 
 
   path:nth-of-type(1) {
-    animation: ${bottomToTop} 70s ease;
+    animation: ${bottomToTop} 70s ease alternate infinite;
   }
 
   path:nth-of-type(2) {
-    animation: ${topToBottom} 70s ease;
+    animation: ${topToBottom} 70s ease alternate infinite;
   }
   
   path:nth-of-type(3) {
-    animation: ${bottomToTop} 70s ease;
+    animation: ${bottomToTop} 70s ease alternate infinite;
   }
 
   path:nth-of-type(4) {
-    animation: ${rightToLeft} 70s ease;
+    animation: ${leftToRight} 70s ease alternate infinite;
   }
 
   path:nth-of-type(5) {
-    animation: ${rightToLeft} 70s ease;
+    animation: ${leftToRight} 70s ease alternate infinite; 
   }
 
   path:nth-of-type(6) {
-    animation: ${bottomToTop2} 70s ease;
+    animation: ${bottomToTop2} 70s ease alternate infinite;
   }
   path:nth-of-type(7) {
-    animation: ${bottomToTop2} 70s ease;
+    animation: ${bottomToTop2} 70s ease alternate infinite;
   }
   path:nth-of-type(8) {
-    animation: ${bottomToTop2} 70s ease;
+    animation: ${bottomToTop2} 70s ease alternate infinite;
   }
   path:nth-of-type(9) {
-    animation: ${bottomToTop3} 70s ease;
+    animation: ${bottomToTop3} 70s ease alternate infinite;
   }
 
 
