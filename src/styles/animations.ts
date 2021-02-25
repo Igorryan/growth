@@ -347,9 +347,9 @@ export const focus_in_contract = css`
 export const graviting = css`
   animation: ${keyframes`
   from {
-    -webkit-transform: translateY(-1rem);
-    -ms-transform: translateY(-1rem);
-    transform: translateY(-1rem);
+    -webkit-transform: translateY(-0.5rem);
+    -ms-transform: translateY(-0.5rem);
+    transform: translateY(-0.5rem);
   }
   to {
     -webkit-transform: translateY(0.5rem);
